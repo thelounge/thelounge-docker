@@ -1,5 +1,7 @@
 FROM node:4
 
+ENV LOUNGE_VERSION 1.5.0
+
 # Create a non-root user for lounge to run in.
 RUN useradd --create-home lounge
 
@@ -14,7 +16,7 @@ ENV LOUNGE_SRC ${HOME}/src
 RUN mkdir -p ${LOUNGE_SRC}
 WORKDIR ${LOUNGE_SRC}
 
-COPY . ${LOUNGE_SRC}
+RUN curl -L https://github.com/thelounge/lounge/archive/v${LOUNGE_VERSION}.tar.gz | tar --strip-components 1 -xzf -
 
 RUN chown -R lounge:lounge ${LOUNGE_SRC}
 
