@@ -16,21 +16,23 @@ ENV LOUNGE_SRC "${LOUNGE_HOME}/src"
 RUN groupadd --gid ${gid} ${group} \
       && useradd --home "${LOUNGE_HOME}" --create-home --uid ${uid} --gid ${gid} ${user}
 
-VOLUME "${LOUNGE_DATA}"
-RUN chown -R ${user} "${LOUNGE_DATA}"
-
-# Drop root.
-USER ${user}
-
 # Install thelounge.
 RUN mkdir -p "${LOUNGE_SRC}"
 WORKDIR "${LOUNGE_SRC}"
 RUN curl -L $(npm view thelounge@${LOUNGE_VERSION} dist.tarball) | tar --strip-components 1 -xzf -
 RUN npm install
+RUN npm link
 
 # Expose HTTP.
 ENV PORT 9000
 EXPOSE ${PORT}
+
+RUN mkdir -p "${LOUNGE_DATA}"
+RUN chown -R ${user}:${group} "${LOUNGE_DATA}"
+VOLUME "${LOUNGE_DATA}"
+
+# Drop root.
+USER ${user}
 
 # Don't use an entrypoint here. It makes debugging difficult.
 CMD node index.js --home "$LOUNGE_DATA"
