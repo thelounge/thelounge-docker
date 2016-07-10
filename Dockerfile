@@ -16,8 +16,9 @@ ENV LOUNGE_SRC "${LOUNGE_HOME}/src"
 RUN groupadd --gid ${gid} ${group} \
       && useradd --home "${LOUNGE_HOME}" --create-home --uid ${uid} --gid ${gid} ${user}
 
+RUN mkdir -p "${LOUNGE_DATA}"
+RUN chown -R ${user}:${group} "${LOUNGE_DATA}"
 VOLUME "${LOUNGE_DATA}"
-RUN chown -R ${user} "${LOUNGE_DATA}"
 
 # Drop root.
 USER ${user}
