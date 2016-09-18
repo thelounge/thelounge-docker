@@ -1,6 +1,6 @@
 FROM mhart/alpine-node:6
 
-ENV GIT_REV="master"
+ARG GIT_REV="master"
 
 RUN apk add --no-cache openssh git
 
