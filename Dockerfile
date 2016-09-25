@@ -1,6 +1,6 @@
 FROM node:4
 
-ENV LOUNGE_VERSION 1.5.0
+ENV LOUNGE_VERSION 2.0.0
 ENV NODE_ENV production
 
 ARG user=lounge
