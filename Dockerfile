@@ -1,4 +1,4 @@
-FROM node:4
+FROM node:6
 
 ENV LOUNGE_VERSION 2.0.1
 ENV NODE_ENV production
