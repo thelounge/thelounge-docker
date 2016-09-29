@@ -3,5 +3,6 @@ lounge:
   container_name: lounge
   ports:
     - "9000:9000"
+  restart: always
   volumes:
     - ~/.lounge:/home/lounge/data # bind lounge config from the host's file system
