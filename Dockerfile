@@ -27,7 +27,4 @@ EXPOSE ${PORT}
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
-# Drop root.
-USER ${user}
-
 ENTRYPOINT ["docker-entrypoint.sh"]
