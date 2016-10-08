@@ -31,8 +31,3 @@ You can control how The Lounge is started through the following environment vari
 ## Where is data stored?
 
 Lounge reads and stores its configuration, logs and other data at `/home/lounge/data`.
-
-## What user does lounge run as?
-
-Lounge runs as the `lounge:lounge` user by default, with `uid=1000, gid=1000`. These can be
-overridden with the `user`, `uid`, `group`, `gid` [build args](https://docs.docker.com/engine/reference/commandline/build/#set-build-time-variables-build-arg).
