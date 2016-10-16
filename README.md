@@ -20,7 +20,20 @@ $ docker run --detach \
 		thelounge/lounge:latest
 ```
 
-## Environment variables
+## Changing the port that The Lounge will be available on
+
+To change the port which The Lounge will be available on, one will have to
+change the host port in the port mapping. To make The Lounge available on e.g. port 5000;
+```sh
+$ docker run --detach \
+		--name lounge \
+		--publish 5000:9000 \ # Change host port to listen on port 5000
+		--volume ~/.lounge:/home/lounge/data \
+		--restart always \
+		thelounge/lounge:latest
+```
+
+## Environment variables (advanced usage)
 
 You can control how The Lounge is started through the following environment variables;
 
