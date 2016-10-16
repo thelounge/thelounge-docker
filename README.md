@@ -4,7 +4,7 @@ Docker container for [The Lounge](https://thelounge.github.io/), a self-hosted w
 
 ## Running a container
 
-Using the example docker-compose.yml file
+Using the example [`docker-compose.yml`](https://github.com/thelounge/docker-lounge/blob/master/docker-compose.yml) file. [What is docker-compose?](https://docs.docker.com/compose/)
 ```sh
 $ docker-compose up --detach
 ```
