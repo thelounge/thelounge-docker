@@ -1,6 +1,6 @@
 FROM node:6
 
-ENV LOUNGE_VERSION 2.0.1
+ENV LOUNGE_VERSION 2.1.0
 ENV NODE_ENV production
 
 ENV LOUNGE_HOME "/home/lounge/data"
