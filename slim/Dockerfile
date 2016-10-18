@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:6-slim
 
 ENV LOUNGE_VERSION 2.1.0
 ENV NODE_ENV production
