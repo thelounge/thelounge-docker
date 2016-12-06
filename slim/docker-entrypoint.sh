@@ -18,7 +18,7 @@ if [ ! -z "$BIND" ]; then
    CONF_OPT_BIND="--bind $BIND"
 fi
 
-lounge \
+exec lounge \
     $CONF_OPT_HOST \
     $CONF_OPT_PORT \
     $CONF_OPT_BIND \
