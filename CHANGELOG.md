@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.2.0 (2017-02-01)
+
+- bump [`thelounge`][1] to [`v2.2.0`](https://github.com/thelounge/lounge/releases/tag/v2.2.0)
+- add `alpine` and `slim` flavours of the official image ([#21](https://github.com/thelounge/docker-lounge/pull/21) by [@williamboman](https://github.com/williamboman))
+  - These flavours will henceforth be available via `-alpine` and `-slim`, e.g.;
+    - `thelounge/lounge:2.2.0-alpine`
+    - `thelounge/lounge:2.2.0-slim`
+- use `exec` in entrypoint script ([#25](https://github.com/thelounge/docker-lounge/pull/25) by [@williamboman](https://github.com/williamboman))
+- merge npm operation layers into a single one, effectively reducing the images' virtual size ([#27](https://github.com/thelounge/docker-lounge/pull/27) by [@williamboman](https://github.com/williamboman))
+
+
 ## 2.1.0 (2016-10-17)
 
 - bump [`thelounge`][1] to [`v2.1.0`](https://github.com/thelounge/lounge/releases/tag/v2.1.0)
