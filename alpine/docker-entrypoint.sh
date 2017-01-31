@@ -15,11 +15,17 @@ if [ ! -z "$PORT" ]; then
     CONF_OPT_PORT="--port $PORT"
 fi
 if [ ! -z "$BIND" ]; then
-   CONF_OPT_BIND="--bind $BIND"
+    CONF_OPT_BIND="--bind $BIND"
 fi
 
-exec lounge \
-    $CONF_OPT_HOST \
-    $CONF_OPT_PORT \
-    $CONF_OPT_BIND \
-    ;
+if [ "$*" = lounge ]; then
+    # if the supplied command is the default ("lounge"), append any
+    # optional flags defined via environment variables
+    exec "$@" \
+        $CONF_OPT_HOST \
+        $CONF_OPT_PORT \
+        $CONF_OPT_BIND \
+        ;
+else
+    exec "$@"
+fi
