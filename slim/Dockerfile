@@ -9,8 +9,8 @@ RUN mkdir -p "${LOUNGE_HOME}"
 VOLUME "${LOUNGE_HOME}"
 
 # Install thelounge.
-RUN npm install -g thelounge@${LOUNGE_VERSION}
-RUN npm cache clean
+RUN npm install -g thelounge@${LOUNGE_VERSION} && \
+    npm cache clean
 
 # Expose HTTP.
 ENV PORT 9000
