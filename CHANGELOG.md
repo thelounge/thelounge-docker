@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.2.1 (2017-02-13)
+
+- bump [`thelounge`][1] to [`v2.2.1`](https://github.com/thelounge/lounge/releases/tag/v2.2.1)
+- use `CMD` directive in `Dockerfile` to facilitate user-defined commands ([#28](https://github.com/thelounge/docker-lounge/pull/28) by [@williamboman](https://github.com/williamboman))
+
+
 ## 2.2.0 (2017-02-01)
 
 - bump [`thelounge`][1] to [`v2.2.0`](https://github.com/thelounge/lounge/releases/tag/v2.2.0)
