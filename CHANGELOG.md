@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.2 (2017-03-13)
+
+- bump [`thelounge`][1] to [`v2.2.2`](https://github.com/thelounge/lounge/releases/tag/v2.2.2)
+
 ## 2.2.1 (2017-02-13)
 
 - bump [`thelounge`][1] to [`v2.2.1`](https://github.com/thelounge/lounge/releases/tag/v2.2.1)
