@@ -3,6 +3,7 @@
 ## 2.2.2 (2017-03-13)
 
 - bump [`thelounge`][1] to [`v2.2.2`](https://github.com/thelounge/lounge/releases/tag/v2.2.2)
+- use `start` subcommand as default command ([#29](https://github.com/thelounge/docker-lounge/pull/29) by [@williamboman](https://github.com/williamboman))
 
 ## 2.2.1 (2017-02-13)
 
