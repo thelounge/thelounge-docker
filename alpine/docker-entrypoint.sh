@@ -18,7 +18,7 @@ if [ ! -z "$BIND" ]; then
     CONF_OPT_BIND="--bind $BIND"
 fi
 
-if [ "$*" = lounge ]; then
+if [ "$*" = "lounge start" ]; then
     # if the supplied command is the default ("lounge"), append any
     # optional flags defined via environment variables
     exec "$@" \
