@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:6
+FROM node:6-alpine
 
 ENV LOUNGE_VERSION 2.2.2
 ENV NODE_ENV production
