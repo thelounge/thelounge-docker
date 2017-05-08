@@ -5,6 +5,12 @@ ENV NODE_ENV production
 
 ENV LOUNGE_HOME "/home/lounge/data"
 
+# Install common TTY text editors to allow editing files from within the container
+RUN apt-get update && \
+    apt-get install -y vim nano && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN mkdir -p "${LOUNGE_HOME}"
 VOLUME "${LOUNGE_HOME}"
 
