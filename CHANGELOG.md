@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.3.0 (2017-06-08)
+
+- bump [`thelounge`][1] to [`v2.3.0`](https://github.com/thelounge/lounge/releases/tag/v2.3.0)
+- `vim(1)` and `nano(1)` are now installed in the base image `thelounge/lounge`. `alpine` and `slim` flavours are unaffected
+    - this allows editing configuration file from within the container via attaching to pseudo-TTYs
+- `alpine` flavour is now based on the official alpine Node 6 LTS image
+
 ## 2.2.2 (2017-03-13)
 
 - bump [`thelounge`][1] to [`v2.2.2`](https://github.com/thelounge/lounge/releases/tag/v2.2.2)
