@@ -1,6 +1,6 @@
 FROM node:6-alpine
 
-ENV LOUNGE_VERSION 2.2.2
+ENV LOUNGE_VERSION 2.3.0
 ENV NODE_ENV production
 
 ENV LOUNGE_HOME "/home/lounge/data"
