@@ -19,7 +19,7 @@ if [ ! -z "$BIND" ]; then
 fi
 
 if [ "$*" = "lounge start" ]; then
-    # if the supplied command is the default ("lounge"), append any
+    # if the supplied command is the default (see the CMD directive in Dockerfile), append any
     # optional flags defined via environment variables
     exec "$@" \
         $CONF_OPT_HOST \
