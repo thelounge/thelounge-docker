@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.5.0 (2017-10-17)
+
+- bump [`thelounge`][1] to [`v2.5.0`](https://github.com/thelounge/lounge/releases/tag/v2.5.0)
+- add a Makefile to help build images
+- discontinue the `LOUNGE_VERSION` environment variable in favor of the new `THELOUNGE_VERSION` build argument
+    - the `THELOUNGE_VERSION` build argument makes it possible to control which `thelounge` version to install via build arguments
+
 ## 2.4.0 (2017-07-31)
 
 - bump [`thelounge`][1] to [`v2.4.0`](https://github.com/thelounge/lounge/releases/tag/v2.4.0)
