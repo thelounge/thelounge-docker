@@ -1,6 +1,6 @@
 FROM node:6
 
-ARG THELOUNGE_VERSION=2.5.0
+ARG THELOUNGE_VERSION=2.6.0
 ENV NODE_ENV production
 
 ENV LOUNGE_HOME "/home/lounge/data"
