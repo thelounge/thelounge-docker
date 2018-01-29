@@ -1,6 +1,6 @@
 FROM node:6-slim
 
-ARG THELOUNGE_VERSION=2.6.0
+ARG THELOUNGE_VERSION=2.7.0
 ENV NODE_ENV production
 
 ENV THELOUNGE_HOME "/home/lounge/data"

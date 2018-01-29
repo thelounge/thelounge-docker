@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.7.0 (2018-01-29)
+
+- bump [`thelounge`][1] to [`v2.7.0`](https://github.com/thelounge/lounge/releases/tag/v2.7.0)
+- use `thelounge` executable instead of the deprecated `lounge` executable
+- use `THELOUNGE_HOME` environment variable instead of the deprecated `LOUNGE_HOME` environment variable
+
 ## 2.6.0 (2017-11-19)
 
 - bump [`thelounge`][1] to [`v2.6.0`](https://github.com/thelounge/lounge/releases/tag/v2.6.0)
