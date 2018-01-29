@@ -9,16 +9,16 @@ if [ -d /home/lounge/src ]; then
 fi
 
 if [ ! -z "$HOST" ]; then
-    CONF_OPT_HOST="--host $HOST"
+    CONF_OPT_HOST="-c host=$HOST"
 fi
 if [ ! -z "$PORT" ]; then
-    CONF_OPT_PORT="--port $PORT"
+    CONF_OPT_PORT="-c port=$PORT"
 fi
 if [ ! -z "$BIND" ]; then
-    CONF_OPT_BIND="--bind $BIND"
+    CONF_OPT_BIND="-c bind=$BIND"
 fi
 
-if [ "$*" = "lounge start" ]; then
+if [ "$*" = "thelounge start" ]; then
     # if the supplied command is the default (see the CMD directive in Dockerfile), append any
     # optional flags defined via environment variables
     exec "$@" \
