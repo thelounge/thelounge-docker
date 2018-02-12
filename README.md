@@ -24,11 +24,6 @@
 			alt="#thelounge IRC channel on freenode"
 			src="https://img.shields.io/badge/freenode-%23thelounge-415364.svg?colorA=ff9e18&style=flat-square">
 	</a>
-	<a href="https://hub.docker.com/r/thelounge/lounge/">
-		<img
-			alt="npm version"
-			src="https://img.shields.io/npm/v/thelounge.svg?style=flat-square">
-	</a>
 	<a href="https://www.npmjs.org/package/thelounge">
 		<img
 			alt="Total pulls on Docker"
@@ -44,7 +39,7 @@
 * **Responsive interface.** The client works smoothly on every desktop, smartphone and tablet.
 * **Synchronized experience.** Always resume where you left off no matter what device.
 
-To learn more about configuration, usage and features of The Lounge, take a look at [the website](https://thelounge.github.io).
+To learn more about configuration, usage and features of The Lounge, take a look at [the website](https://thelounge.chat).
 
 ## Running a container
 
