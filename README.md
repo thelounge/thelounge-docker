@@ -7,7 +7,7 @@
 
 <h3 align="center">
 	Docker container for The Lounge, a self-hosted web IRC client.
-</h2>
+</h3>
 
 <p align="center">
 	<strong>
