@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.7.1 (2018-02-19)
+
+- bump [`thelounge`][1] to [`v2.7.1`](https://github.com/thelounge/lounge/releases/tag/v2.7.1)
+- reorder Dockerfile directives to facilitate better docker build cache ([#44](https://github.com/thelounge/docker-lounge/pull/44) by [@mmlb](https://github.com/mmlb))
+
 ## 2.7.0 (2018-01-29)
 
 - bump [`thelounge`][1] to [`v2.7.0`](https://github.com/thelounge/lounge/releases/tag/v2.7.0)
