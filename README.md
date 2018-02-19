@@ -48,11 +48,11 @@ or
 
 ```
 $ docker run --detach \
-		--name lounge \
+		--name thelounge \
 		--publish 9000:9000 \
-		--volume ~/.lounge:/home/lounge/data \
+		--volume ~/.thelounge:/var/opt/thelounge \
 		--restart always \
-		thelounge/lounge:latest
+		thelounge/thelounge:latest
 ```
 
 ## Changing the port that The Lounge will be available on
@@ -61,11 +61,11 @@ To change the port which The Lounge will be available on, one will have to
 change the host port in the port mapping. To make The Lounge available on e.g. port 5000;
 ```sh
 $ docker run --detach \
-		--name lounge \
+		--name thelounge \
 		--publish 5000:9000 \ # Change host port to listen on port 5000
-		--volume ~/.lounge:/home/lounge/data \
+		--volume ~/.thelounge:/var/opt/thelounge \
 		--restart always \
-		thelounge/lounge:latest
+		thelounge/thelounge:latest
 ```
 
 ## Environment variables (advanced usage)
@@ -78,4 +78,4 @@ You can control how The Lounge is started through the following environment vari
 
 ## Where is data stored?
 
-Lounge reads and stores its configuration, logs and other data at `/home/lounge/data`.
+The Lounge reads and stores its configuration, logs and other data at `/var/opt/thelounge`.

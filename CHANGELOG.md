@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.0.0-pre.5 (2018-04-25)
+
+
+- bump [`thelounge`][1] to [`v3.0.0-pre.5`](https://github.com/thelounge/lounge/releases/tag/v3.0.0-pre.5)
+- *Breaking change*: change default data path from `/home/lounge/data` to `/var/opt/thelounge`
+    - This requires you to update your mounted data volume to mount at `/var/opt/thelounge`.
+- use `node v8`
+- update the README
+- update the example `docker-compose.yml` file
+- remove `slim` flavour
+- don't install `vim` and `nano` in the base image
+- remove obsolete warning when mounting source code
+
+
 ## 2.7.1 (2018-02-19)
 
 - bump [`thelounge`][1] to [`v2.7.1`](https://github.com/thelounge/lounge/releases/tag/v2.7.1)

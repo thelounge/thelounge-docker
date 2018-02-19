@@ -1,11 +1,13 @@
 #!/bin/sh
 
-if [ -d /home/lounge/src ]; then
-    # pre 2.0.0 we ran The Lounge from /home/lounge/src/index.js.
-    # This enabled users to mount a volume in that location, effectively
-    # running a completely different installation of The Lounge, while keeping
-    # the same container environment.
-    >&2 printf "%s\n\n" "The Lounge is now installed through a global npm installation. Ignoring contents in /home/lounge/src!"
+if [ -d /home/lounge/data ]; then
+    # pre 3.0.0 the volume mount point was defined at /home/lounge/data
+    >&2 cat <<EOF
+!!! ATTENTION !!!
+Detected mounted volume at old path: /home/lounge/data.
+The new path is: /var/opt/thelounge. Please update your volume bindings!
+EOF
+    exit 1
 fi
 
 if [ ! -z "$HOST" ]; then

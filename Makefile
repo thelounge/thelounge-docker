@@ -1,17 +1,12 @@
-THELOUNGE_VERSION?=2.7.1
+THELOUNGE_VERSION?=3.0.0-pre.5
 ORGANISATION?=thelounge
 
-all: main alpine slim
+all: main alpine
 
 main:
-	docker build -t ${ORGANISATION}/lounge:${THELOUNGE_VERSION} --build-arg THELOUNGE_VERSION=${THELOUNGE_VERSION} .
-
+	docker build -t ${ORGANISATION}/thelounge:${THELOUNGE_VERSION} --build-arg THELOUNGE_VERSION=${THELOUNGE_VERSION} .
 
 alpine:
-	docker build -f alpine/Dockerfile -t ${ORGANISATION}/lounge:${THELOUNGE_VERSION}-alpine --build-arg THELOUNGE_VERSION=${THELOUNGE_VERSION} .
+	docker build -f alpine/Dockerfile -t ${ORGANISATION}/thelounge:${THELOUNGE_VERSION}-alpine --build-arg THELOUNGE_VERSION=${THELOUNGE_VERSION} alpine
 
-
-slim:
-	docker build -f slim/Dockerfile -t ${ORGANISATION}/lounge:${THELOUNGE_VERSION}-slim --build-arg THELOUNGE_VERSION=${THELOUNGE_VERSION} .
-
-.PHONY: main alpine slim
+.PHONY: main alpine
