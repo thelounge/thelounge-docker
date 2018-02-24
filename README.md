@@ -2,11 +2,11 @@
 	<img
 		width="300"
 		alt="The Lounge"
-		src="https://raw.githubusercontent.com/thelounge/lounge/b637f50522cea5c666402507582b5e945a733e96/client/img/logo-vertical-transparent-bg.svg">
+		src="https://raw.githubusercontent.com/thelounge/thelounge/master/client/img/logo-vertical-transparent-bg.svg">
 </h1>
 
 <h3 align="center">
-	Docker container for The Lounge, a self-hosted web IRC client.
+	Docker container for The Lounge, modern web IRC client designed for self-hosting
 </h3>
 
 <p align="center">
@@ -19,16 +19,12 @@
 	</strong>
 </p>
 <p align="center">
-	<a href="https://demo.thelounge.chat/">
-		<img
-			alt="#thelounge IRC channel on freenode"
-			src="https://img.shields.io/badge/freenode-%23thelounge-415364.svg?colorA=ff9e18&style=flat-square">
-	</a>
-	<a href="https://www.npmjs.org/package/thelounge">
-		<img
-			alt="Total pulls on Docker"
-			src="https://img.shields.io/docker/pulls/thelounge/lounge.svg?style=flat-square">
-	</a>
+	<a href="https://demo.thelounge.chat/"><img
+		alt="#thelounge IRC channel on freenode"
+		src="https://img.shields.io/badge/freenode-%23thelounge-415364.svg?colorA=ff9e18&style=flat-square"></a>
+	<a href="https://hub.docker.com/r/thelounge/lounge/"><img
+		alt="Total pulls on Docker"
+		src="https://img.shields.io/docker/pulls/thelounge/lounge.svg?style=flat-square"></a>
 </p>
 
 ## Overview
