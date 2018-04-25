@@ -55,10 +55,17 @@ $ docker run --detach \
 		thelounge/thelounge:latest
 ```
 
+## Adding users
+
+Users can be added as follows:
+```sh
+$ docker exec -it <container_name> thelounge add <username>
+```
+
 ## Changing the port that The Lounge will be available on
 
 To change the port which The Lounge will be available on, one will have to
-change the host port in the port mapping. To make The Lounge available on e.g. port 5000;
+change the host port in the port mapping. To make The Lounge available on e.g. port 5000:
 ```sh
 $ docker run --detach \
 		--name thelounge \
