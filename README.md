@@ -22,14 +22,10 @@
 	<a href="https://demo.thelounge.chat/"><img
 		alt="#thelounge IRC channel on freenode"
 		src="https://img.shields.io/badge/freenode-%23thelounge-415364.svg?colorA=ff9e18&style=flat-square"></a>
-	<a href="https://hub.docker.com/r/thelounge/lounge/"><img
+	<a href="https://hub.docker.com/r/thelounge/thelounge/"><img
 		alt="Total pulls on Docker"
-		src="https://img.shields.io/docker/pulls/thelounge/lounge.svg?style=flat-square"></a>
+		src="https://img.shields.io/docker/pulls/thelounge/thelounge.svg?style=flat-square"></a>
 </p>
-
-## v3 pre-releases
-
-Documentation for v3 pre-releases can be found at the new [DockerHub repository](https://hub.docker.com/r/thelounge/thelounge/). The documentation found here refers to the v2 branch. Don't forget to check the [CHANGELOG](CHANGELOG.md) if you're upgrading from v2!
 
 ## Overview
 
@@ -54,14 +50,14 @@ or starting a container manually:
 $ docker run --detach \
 		--name thelounge \
 		--publish 9000:9000 \
-		--volume ~/.thelounge:/home/lounge/data \
+		--volume ~/.thelounge:/var/opt/thelounge \
 		--restart always \
-		thelounge/lounge:latest
+		thelounge/thelounge:3.0.0-pre.7
 ```
 
 ## Data directory
 
-The Lounge reads and stores all of its configuration, logs and other data at `/home/lounge/data`.
+The Lounge reads and stores all of its configuration, logs and other data at `/var/opt/thelounge`.
 
 *You will probably want to persist the data at this location by using [one of the means](https://docs.docker.com/storage/) to do so.*
 
@@ -82,9 +78,9 @@ change the host port in the port mapping. To make The Lounge available on e.g. p
 $ docker run --detach \
 		--name thelounge \
 		--publish 5000:9000 \ # Change host port to listen on port 5000
-		--volume ~/.thelounge:/home/lounge/data \
+		--volume ~/.thelounge:/var/opt/thelounge \
 		--restart always \
-		thelounge/lounge:latest
+		thelounge/thelounge:3.0.0-pre.7
 ```
 
 ## Environment variables (advanced usage)
