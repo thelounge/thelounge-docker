@@ -1,8 +1,8 @@
 # Changelog
 
-## 3.0.0-pre.5 (2018-04-25)
+## 3.0.0-pre.6 (2018-05-26)
 
-- bump [`thelounge`][1] to [`v3.0.0-pre.5`](https://github.com/thelounge/lounge/releases/tag/v3.0.0-pre.5)
+- bump [`thelounge`][1] to [`v3.0.0-pre.6`](https://github.com/thelounge/lounge/releases/tag/v3.0.0-pre.6)
 - *Breaking change*: change default data path from `/home/lounge/data` to `/var/opt/thelounge`
     - This requires you to update your mounted data volume to mount at `/var/opt/thelounge`.
 - rename the image from `thelounge/lounge` to [`thelounge/thelounge`](https://hub.docker.com/r/thelounge/thelounge/) on DockerHub
@@ -12,7 +12,6 @@
 - remove `slim` flavour
 - don't install `vim` and `nano` in the base image
 - remove obsolete warning when mounting source code
-
 
 ## 2.7.1 (2018-02-19)
 
