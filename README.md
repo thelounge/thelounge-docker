@@ -50,14 +50,14 @@ or starting a container manually:
 $ docker run --detach \
 		--name thelounge \
 		--publish 9000:9000 \
-		--volume ~/.thelounge:/home/lounge/data \
+		--volume ~/.thelounge:/var/opt/thelounge \
 		--restart always \
 		thelounge/lounge:latest
 ```
 
 ## Data directory
 
-The Lounge reads and stores all of its configuration, logs and other data at `/home/lounge/data`.
+The Lounge reads and stores all of its configuration, logs and other data at `/var/opt/thelounge`.
 
 *You will probably want to persist the data at this location by using [one of the means](https://docs.docker.com/storage/) to do so.*
 
@@ -78,7 +78,7 @@ change the host port in the port mapping. To make The Lounge available on e.g. p
 $ docker run --detach \
 		--name thelounge \
 		--publish 5000:9000 \ # Change host port to listen on port 5000
-		--volume ~/.thelounge:/home/lounge/data \
+		--volume ~/.thelounge:/var/opt/thelounge \
 		--restart always \
 		thelounge/lounge:latest
 ```
