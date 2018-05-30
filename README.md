@@ -27,6 +27,10 @@
 		src="https://img.shields.io/docker/pulls/thelounge/lounge.svg?style=flat-square"></a>
 </p>
 
+## v3 pre-releases
+
+Documentation for v3 pre-releases can be found at the new [DockerHub repository](https://hub.docker.com/r/thelounge/thelounge/). The documentation found here refers to the v2 branch. Don't forget to check the [CHANGELOG](CHANGELOG.md) if you're upgrading from v2!
+
 ## Overview
 
 * **Modern features brought to IRC.** Push notifications, link previews, new message markers, and more bring IRC to the 21st century.
