@@ -29,7 +29,7 @@
 
 ## v3 pre-releases
 
-Documentation for v3 pre-releases can be found at the new [DockerHub repository](https://hub.docker.com/r/thelounge/thelounge/). The documentation found here refers to the v2 branch. Don't forget to check the [CHANGELOG](CHANGELOG.md) if you're upgrading from v2!
+Documentation for v3 pre-releases can be found [here](https://github.com/thelounge/thelounge-docker/tree/v3-docs#readme). The documentation found on this page refers to the v2 branch. Don't forget to check the [CHANGELOG](CHANGELOG.md) if you're upgrading from v2!
 
 ## Overview
 
