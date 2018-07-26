@@ -1,31 +1,14 @@
-<h1 align="center">
-	<img
-		width="300"
-		alt="The Lounge"
-		src="https://raw.githubusercontent.com/thelounge/thelounge/master/client/img/logo-vertical-transparent-bg.svg?sanitize=true">
-</h1>
+![The Lounge](https://raw.githubusercontent.com/thelounge/thelounge.github.io/master/assets/logos/logo/TL_Grey%26Yellow_Vertical_logotype_Transparent_Bg/TL_Grey%26Yellow_Vertical_logotype_Transparent_Bg.png)
 
-<h3 align="center">
-	Docker container for The Lounge, modern web IRC client designed for self-hosting
-</h3>
+### Docker container for The Lounge, modern web IRC client designed for self-hosting
 
-<p align="center">
-	<strong>
-		<a href="https://thelounge.chat/">Website</a>
-		•
-		<a href="https://thelounge.chat/docs">Docs</a>
-		•
-		<a href="https://demo.thelounge.chat/">Demo</a>
-	</strong>
-</p>
-<p align="center">
-	<a href="https://demo.thelounge.chat/"><img
-		alt="#thelounge IRC channel on freenode"
-		src="https://img.shields.io/badge/freenode-%23thelounge-415364.svg?colorA=ff9e18&style=flat-square"></a>
-	<a href="https://hub.docker.com/r/thelounge/thelounge/"><img
-		alt="Total pulls on Docker"
-		src="https://img.shields.io/docker/pulls/thelounge/thelounge.svg?style=flat-square"></a>
-</p>
+**[Website](https://thelounge.chat/)
+•
+[Docs](https://thelounge.chat/docs)
+•
+[Demo](https://demo.thelounge.chat/)**
+
+[![#thelounge IRC channel on freenode"](https://img.shields.io/badge/freenode-%23thelounge-415364.svg?colorA=ff9e18&style=flat-square)](https://demo.thelounge.chat/) [![Total pulls on Docker](https://img.shields.io/docker/pulls/thelounge/thelounge.svg?style=flat-square)](https://hub.docker.com/r/thelounge/thelounge/)
 
 ## Overview
 
