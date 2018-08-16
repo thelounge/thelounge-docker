@@ -14,6 +14,7 @@ jobs:
         - docker exec main thelounge --version | grep --color=never -E "^v[0-9]\.[0-9]\.[0-9]" | cut -c 2- | grep -f /dev/stdin Dockerfile
         - sleep 3 # wait for the server to (hopefully) start
         - curl -sL localhost:9001 | grep "<title>The Lounge</title>"
+    - stage: test
       script:
         - docker build -t thelounge:alpine -f alpine/Dockerfile alpine
         - docker run -d -p 9002:9000 --name alpine thelounge:alpine
