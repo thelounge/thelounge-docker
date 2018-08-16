@@ -8,7 +8,7 @@ script:
   - docker build -t thelounge:alpine -f alpine/Dockerfile alpine
   - docker run -d -p 9001:9000 --name main thelounge:main
   - docker run -d -p 9002:9000 --name alpine thelounge:alpine
-  - docker exec main thelounge --version | grep -E "^[v0-9]\.[0-9]\.[0-9]"
-  - docker exec alpine thelounge --version | grep -E "^[v0-9]\.[0-9]\.[0-9]"
+  - docker exec main thelounge --version | grep -E "^v[0-9]\.[0-9]\.[0-9]"
+  - docker exec alpine thelounge --version | grep -E "^v[0-9]\.[0-9]\.[0-9]"
   - curl -sL localhost:9001 | grep "<title>The Lounge</title>"
   - curl -sL localhost:9002 | grep "<title>The Lounge</title>"
