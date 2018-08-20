@@ -84,7 +84,7 @@ $ docker run --detach \
 		--publish 5000:9000 \ # Change host port to listen on port 5000
 		--volume ~/.thelounge:/home/lounge/data \
 		--restart always \
-		thelounge/lounge:latest
+		thelounge/thelounge:latest
 ```
 
 ## Environment variables (advanced usage)
