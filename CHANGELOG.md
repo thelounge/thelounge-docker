@@ -1,7 +1,7 @@
 # Changelog
 
-## Pre-release (3.0.0-pre.8) (2018-08-25)
-- Bump [`thelounge`][1] to [`v3.0.0-pre.8`](https://github.com/thelounge/lounge/releases/tag/v3.0.0-pre.8).
+## Release candidate (3.0.0-rc.1) (2018-09-20)
+- Bump [`thelounge`][1] to [`v3.0.0-rc.1`](https://github.com/thelounge/lounge/releases/tag/v3.0.0-rc.1).
 - Use `node v8`.
 - Update the example `docker-compose.yml` file.
 
