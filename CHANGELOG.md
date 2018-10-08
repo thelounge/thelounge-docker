@@ -1,16 +1,15 @@
 # Changelog
 
-## Release candidate (3.0.0-rc.1) (2018-09-20)
-- Bump [`thelounge`][1] to [`v3.0.0-rc.1`](https://github.com/thelounge/lounge/releases/tag/v3.0.0-rc.1).
+## Release candidate (3.0.0-rc.2) (2018-10-08)
+- Bump [`thelounge`][1] to [`v3.0.0-rc.2`](https://github.com/thelounge/lounge/releases/tag/v3.0.0-rc.2).
 - Use `node v8`.
-- Update the example `docker-compose.yml` file.
 
 #### Breaking Changes
 - Rename the image from `thelounge/lounge` to [`thelounge/thelounge`](https://hub.docker.com/r/thelounge/thelounge/) on DockerHub.
 - Change default data path from `/home/lounge/data` to `/var/opt/thelounge`.
     - This requires you to update your mounted data volume to mount at `/var/opt/thelounge`.
 - Remove the `slim` flavour.
-- Don't install `vim` and `nano` in the base image.
+- No longer installs `vim` and `nano` in the base image.
 
 ## 2.7.1 (2018-02-19)
 
