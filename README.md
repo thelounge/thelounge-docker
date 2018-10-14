@@ -72,6 +72,6 @@ $ docker run --detach \
 
 You can control how The Lounge is started through the following environment variables;
 
-- `HOST` (equivalent to the `-H, --host` CLI option)
-- `PORT` (equivalent to the `-P, --port` CLI option)
-- `BIND` (equivalent to the `-B, --bind` CLI option)
+- `HOST` (equivalent to the `-c host` CLI option)
+- `PORT` (equivalent to the `-c port` CLI option)
+- `BIND` (equivalent to the `-c bind` CLI option)
