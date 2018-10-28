@@ -10,17 +10,18 @@
 
 ### Overview
 
-* **Modern features brought to IRC.** Push notifications, link previews, new message markers, and more bring IRC to the 21st century.
-* **Always connected.** Remains connected to IRC servers while you are offline.
-* **Cross platform.** It doesn't matter what OS you use, it just works wherever Node.js runs.
-* **Responsive interface.** The client works smoothly on every desktop, smartphone and tablet.
-* **Synchronized experience.** Always resume where you left off no matter what device.
+-   **Modern features brought to IRC.** Push notifications, link previews, new message markers, and more bring IRC to the 21st century.
+-   **Always connected.** Remains connected to IRC servers while you are offline.
+-   **Cross platform.** It doesn't matter what OS you use, it just works wherever Node.js runs.
+-   **Responsive interface.** The client works smoothly on every desktop, smartphone and tablet.
+-   **Synchronized experience.** Always resume where you left off no matter what device.
 
 To learn more about configuration, usage and features of The Lounge, take a look at [the website](https://thelounge.chat).
 
 ### Running a container
 
 One can get started quickly by using the example [`docker-compose.yml`](https://github.com/thelounge/docker-lounge/blob/master/docker-compose.yml) file. [What is docker-compose?](https://docs.docker.com/compose/)
+
 ```sh
 $ docker-compose up --detach
 ```
@@ -40,21 +41,23 @@ $ docker run --detach \
 
 The Lounge reads and stores all of its configuration, logs and other data at `/var/opt/thelounge`.
 
-*You will probably want to persist the data at this location by using [one of the means](https://docs.docker.com/storage/) to do so.*
+_You will probably want to persist the data at this location by using [one of the means](https://docs.docker.com/storage/) to do so._
 
 ### Adding users
 
 Users can be added as follows:
+
 ```sh
 $ docker exec -it <container_name> thelounge add <username>
 ```
 
-*Note: without [persisting data](#data-directory), added users will be lost when the container is removed.*
+_Note: without [persisting data](#data-directory), added users will be lost when the container is removed._
 
 ### Changing the port that The Lounge will be available on
 
 To change the port which The Lounge will be available on, one will have to
 change the host port in the port mapping. To make The Lounge available on e.g. port 5000:
+
 ```sh
 $ docker run --detach \
 		--name thelounge \
@@ -68,6 +71,6 @@ $ docker run --detach \
 
 You can control how The Lounge is started through the following environment variables;
 
-- `HOST` (equivalent to the `-c host` CLI option)
-- `PORT` (equivalent to the `-c port` CLI option)
-- `BIND` (equivalent to the `-c bind` CLI option)
+-   `HOST` (equivalent to the `-c host` CLI option)
+-   `PORT` (equivalent to the `-c port` CLI option)
+-   `BIND` (equivalent to the `-c bind` CLI option)
