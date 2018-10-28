@@ -30,11 +30,11 @@ or starting a container manually:
 
 ```
 $ docker run --detach \
-		--name thelounge \
-		--publish 9000:9000 \
-		--volume ~/.thelounge:/var/opt/thelounge \
-		--restart always \
-		thelounge/thelounge:3.0.0-pre.7
+             --name thelounge \
+             --publish 9000:9000 \
+             --volume ~/.thelounge:/var/opt/thelounge \
+             --restart always \
+             thelounge/thelounge:3.0.0-pre.7
 ```
 
 ### Data directory
@@ -60,11 +60,11 @@ change the host port in the port mapping. To make The Lounge available on e.g. p
 
 ```sh
 $ docker run --detach \
-		--name thelounge \
-		--publish 5000:9000 \ # Change host port to listen on port 5000
-		--volume ~/.thelounge:/var/opt/thelounge \
-		--restart always \
-		thelounge/thelounge:3.0.0-pre.7
+             --name thelounge \
+             --publish 5000:9000 \ # Change host port to listen on port 5000
+             --volume ~/.thelounge:/var/opt/thelounge \
+             --restart always \
+             thelounge/thelounge:3.0.0-pre.7
 ```
 
 ### Environment variables (advanced usage)
