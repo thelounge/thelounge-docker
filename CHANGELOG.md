@@ -1,7 +1,7 @@
 # Changelog
 
-## Release candidate (3.0.0-rc.3) (2018-10-10)
-- Bump [`thelounge`][1] to [`v3.0.0-rc.3`](https://github.com/thelounge/lounge/releases/tag/v3.0.0-rc.3).
+## Release candidate (3.0.0-rc.4) (2018-10-30)
+- Bump [`thelounge`][1] to [`v3.0.0-rc.4`](https://github.com/thelounge/lounge/releases/tag/v3.0.0-rc.3).
 - Use `node v8`.
 
 #### Breaking Changes
