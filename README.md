@@ -4,7 +4,7 @@
 
 **[Website](https://thelounge.chat/) • [Docs](https://thelounge.chat/docs) • [Demo](https://demo.thelounge.chat/)**
 
-[![#thelounge IRC channel on freenode"](https://img.shields.io/badge/freenode-%23thelounge-415364.svg?colorA=ff9e18&style=flat-square)](https://demo.thelounge.chat/) [![Total pulls on Docker](https://img.shields.io/docker/pulls/thelounge/thelounge.svg?style=flat-square)](https://hub.docker.com/r/thelounge/thelounge/)
+[![#thelounge IRC channel on freenode"](https://img.shields.io/badge/freenode-%23thelounge-415364.svg?colorA=ff9e18&style=flat-square)](https://demo.thelounge.chat/) [![Total pulls on Docker](https://img.shields.io/docker/pulls/thelounge/thelounge.svg?style=flat-square&maxAge=3600)](https://hub.docker.com/r/thelounge/thelounge/) [![Total stars on Docker](https://img.shields.io/docker/stars/thelounge/thelounge.svg?colorB=007dc7&style=flat-square&maxAge=3600)](https://hub.docker.com/r/thelounge/thelounge/)
 
 ---
 
