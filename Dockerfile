@@ -1,4 +1,4 @@
-FROM node:8
+FROM node:10
 
 ENV NODE_ENV production
 
@@ -15,6 +15,6 @@ CMD ["thelounge", "start"]
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Install thelounge.
-ARG THELOUNGE_VERSION=3.0.0-rc.4
+ARG THELOUNGE_VERSION=3.0.0-rc.5
 RUN npm install --unsafe-perm -g thelounge@${THELOUNGE_VERSION} && \
     npm cache clean --force

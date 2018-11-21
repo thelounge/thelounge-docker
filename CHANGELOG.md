@@ -1,8 +1,8 @@
 # Changelog
 
-## Release candidate (3.0.0-rc.4) (2018-10-30)
-- Bump [`thelounge`][1] to [`v3.0.0-rc.4`](https://github.com/thelounge/lounge/releases/tag/v3.0.0-rc.3).
-- Use `node v8`.
+## Release candidate (3.0.0-rc.5) (2018-11-21)
+- Bump [`thelounge`][1] to [`v3.0.0-rc.5`](https://github.com/thelounge/lounge/releases/tag/v3.0.0-rc.5).
+- Upgrade to `node v10`.
 
 #### Breaking Changes
 - Rename the image from `thelounge/lounge` to [`thelounge/thelounge`](https://hub.docker.com/r/thelounge/thelounge/) on DockerHub.
