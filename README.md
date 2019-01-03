@@ -34,7 +34,7 @@ $ docker run --detach \
              --publish 9000:9000 \
              --volume ~/.thelounge:/var/opt/thelounge \
              --restart always \
-             thelounge/thelounge:3.0.0-pre.7
+             thelounge/thelounge:latest
 ```
 
 ### Data directory
