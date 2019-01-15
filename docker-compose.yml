@@ -1,10 +1,10 @@
 version: '2'
 services:
   thelounge:
-    image: thelounge/lounge:latest
+    image: thelounge/thelounge:latest
     container_name: thelounge
     ports:
       - "9000:9000"
     restart: always
     volumes:
-      - ~/.thelounge:/home/lounge/data # bind lounge config from the host's file system
+      - ~/.thelounge:/var/opt/thelounge # bind lounge config from the host's file system
