@@ -1,7 +1,7 @@
 # Changelog
 
-## Release candidate (3.0.0-rc.5) (2018-11-21)
-- Bump [`thelounge`][1] to [`v3.0.0-rc.5`](https://github.com/thelounge/thelounge/releases/tag/v3.0.0-rc.5).
+## Release candidate (3.0.0-rc.6) (2019-01-15)
+- Bump [`thelounge`][1] to [`v3.0.0-rc.6`](https://github.com/thelounge/thelounge/releases/tag/v3.0.0-rc.6).
 - Upgrade to `node v10`.
 
 #### Breaking Changes
