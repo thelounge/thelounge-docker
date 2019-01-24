@@ -48,7 +48,13 @@ _You will probably want to persist the data at this location by using [one of th
 Users can be added as follows:
 
 ```sh
-$ docker exec -it <container_name> thelounge add <username>
+$ docker exec -it [container_name] thelounge add [username]
+```
+
+For example, if your container is called `thelounge` and you want to create a user `john` enter the following:
+
+```sh
+$ docker exec -it thelounge thelounge add john
 ```
 
 _Note: without [persisting data](#data-directory), added users will be lost when the container is removed._
