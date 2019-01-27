@@ -41,6 +41,9 @@ $ docker run --detach \
 
 The Lounge reads and stores all of its configuration, logs and other data at `/var/opt/thelounge`.
 
+By default, The Lounge will run using the `node (1000:1000)` system user in the container, leading to mounted data directories
+on the host system being owned by said user. This is customizable by changing the container user (see [Container user (advanced usage)](#container-user-advanced-usage)).
+
 _You will probably want to persist the data at this location by using [one of the means](https://docs.docker.com/storage/) to do so._
 
 ### Adding users
@@ -48,13 +51,7 @@ _You will probably want to persist the data at this location by using [one of th
 Users can be added as follows:
 
 ```sh
-$ docker exec -it [container_name] thelounge add [username]
-```
-
-For example, if your container is called `thelounge` and you want to create a user `john` enter the following:
-
-```sh
-$ docker exec -it thelounge thelounge add john
+$ docker exec --user node -it [container_name] thelounge add [username]
 ```
 
 _Note: without [persisting data](#data-directory), added users will be lost when the container is removed._
@@ -73,10 +70,9 @@ $ docker run --detach \
              thelounge/thelounge:3.0.0-rc.6
 ```
 
-### Environment variables (advanced usage)
+### Container user (advanced usage)
 
-You can control how The Lounge is started through the following environment variables;
+By default, The Lounge will run using the `node (1000:1000)` user. This is customizable by running the container as a different, non-root, user.
+Beware that this may cause permission issues when a container process tries reading from the data disk unless you have manually set the permissions correctly.
 
--   `HOST` (equivalent to the `-c host` CLI option)
--   `PORT` (equivalent to the `-c port` CLI option)
--   `BIND` (equivalent to the `-c bind` CLI option)
+Also keep in mind that whenever executing one-off commands in the container you need to explicitly set the correct user.

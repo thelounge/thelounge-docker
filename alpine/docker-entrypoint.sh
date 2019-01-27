@@ -10,24 +10,9 @@ EOF
     exit 1
 fi
 
-if [ ! -z "$HOST" ]; then
-    CONF_OPT_HOST="-c host=$HOST"
-fi
-if [ ! -z "$PORT" ]; then
-    CONF_OPT_PORT="-c port=$PORT"
-fi
-if [ ! -z "$BIND" ]; then
-    CONF_OPT_BIND="-c bind=$BIND"
+if [ "$1" = "thelounge" -a "$(id -u)" = '0' ]; then
+    find "${THELOUNGE_HOME}" \! -user node -exec chown node '{}' +
+    exec su node -c "$*"
 fi
 
-if [ "$*" = "thelounge start" ]; then
-    # if the supplied command is the default (see the CMD directive in Dockerfile), append any
-    # optional flags defined via environment variables
-    exec "$@" \
-        $CONF_OPT_HOST \
-        $CONF_OPT_PORT \
-        $CONF_OPT_BIND \
-        ;
-else
-    exec "$@"
-fi
+exec "$@"
