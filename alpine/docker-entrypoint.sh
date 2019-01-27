@@ -10,13 +10,9 @@ EOF
     exit 1
 fi
 
-if [ "$(id -u)" = '0' ]; then
-    # use the node user by default
-    if [ "$*" = "thelounge start" ]; then
-        find "${THELOUNGE_HOME}" \! -user node -exec chown node '{}' +
-    fi
+if [ "$1" = "thelounge" -a "$(id -u)" = '0' ]; then
+    find "${THELOUNGE_HOME}" \! -user node -exec chown node '{}' +
     exec su node -c "$*"
-else
-    # otherwise, allow for a custom user (e.g. through --user CLI arg)
-    exec "$@"
 fi
+
+exec "$@"
