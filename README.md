@@ -82,11 +82,3 @@ By default, The Lounge will run using the `node (1000:1000)` user. This is custo
 Beware that this may cause permission issues when a container process tries reading from the data disk unless you have manually set the permissions correctly.
 
 Also keep in mind that whenever executing one-off commands in the container you need to explicitly set the correct user.
-
-### Environment variables (advanced usage)
-
-You can control how The Lounge is started through the following environment variables;
-
--   `HOST` (equivalent to the `-c host` CLI option)
--   `PORT` (equivalent to the `-c port` CLI option)
--   `BIND` (equivalent to the `-c bind` CLI option)

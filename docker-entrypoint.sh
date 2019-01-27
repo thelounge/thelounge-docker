@@ -10,39 +10,11 @@ EOF
     exit 1
 fi
 
-if [ ! -z "$HOST" ]; then
-    CONF_OPT_HOST="-c host=$HOST"
-fi
-if [ ! -z "$PORT" ]; then
-    CONF_OPT_PORT="-c port=$PORT"
-fi
-if [ ! -z "$BIND" ]; then
-    CONF_OPT_BIND="-c bind=$BIND"
-fi
-
-if [ "$*" = "thelounge start" ]; then
-    # if the supplied command is the default (see the CMD directive in Dockerfile), append any
-    # optional flags defined via environment variables
-    if [ "$(id -u)" = '0' ]; then
-        find "${THELOUNGE_HOME}" \! -user node -exec chown node '{}' +
-        # use the node user by default
-        exec gosu node "$@" \
-            $CONF_OPT_HOST \
-            $CONF_OPT_PORT \
-            $CONF_OPT_BIND \
-            ;
-    else
-        # otherwise, allow for a custom user (e.g. through --user CLI arg)
-        exec "$@" \
-            $CONF_OPT_HOST \
-            $CONF_OPT_PORT \
-            $CONF_OPT_BIND \
-            ;
-    fi
-fi
-
 if [ "$(id -u)" = '0' ]; then
     # use the node user by default
+    if [ "$*" = "thelounge start" ]; then
+        find "${THELOUNGE_HOME}" \! -user node -exec chown node '{}' +
+    fi
     exec gosu node "$@"
 else
     # otherwise, allow for a custom user (e.g. through --user CLI arg)
