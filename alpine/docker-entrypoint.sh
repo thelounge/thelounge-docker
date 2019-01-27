@@ -15,7 +15,7 @@ if [ "$(id -u)" = '0' ]; then
     if [ "$*" = "thelounge start" ]; then
         find "${THELOUNGE_HOME}" \! -user node -exec chown node '{}' +
     fi
-    exec su-exec node "$@"
+    exec su node -c "$*"
 else
     # otherwise, allow for a custom user (e.g. through --user CLI arg)
     exec "$@"
