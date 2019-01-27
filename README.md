@@ -81,6 +81,8 @@ $ docker run --detach \
 By default, The Lounge will run using the `node (1000:1000)` user. This is customizable by running the container as a different, non-root, user.
 Beware that this may cause permission issues when a container process tries reading from the data disk unless you have manually set the permissions correctly.
 
+Also keep in mind that whenever executing one-off commands in the container you need to explicitly set the correct user.
+
 ### Environment variables (advanced usage)
 
 You can control how The Lounge is started through the following environment variables;
