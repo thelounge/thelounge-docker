@@ -34,7 +34,7 @@ $ docker run --detach \
              --publish 9000:9000 \
              --volume ~/.thelounge:/var/opt/thelounge \
              --restart always \
-             thelounge/thelounge:3.0.0-rc.6
+             thelounge/thelounge:latest
 ```
 
 ### Data directory
@@ -67,7 +67,7 @@ $ docker run --detach \
              --publish 5000:9000 \ # Change host port to listen on port 5000
              --volume ~/.thelounge:/var/opt/thelounge \
              --restart always \
-             thelounge/thelounge:3.0.0-rc.6
+             thelounge/thelounge:latest
 ```
 
 ### Container user (advanced usage)

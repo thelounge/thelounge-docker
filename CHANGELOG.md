@@ -1,13 +1,18 @@
 # Changelog
 
-## Release candidate (3.0.0-rc.6) (2019-01-15)
-- Bump [`thelounge`][1] to [`v3.0.0-rc.6`](https://github.com/thelounge/thelounge/releases/tag/v3.0.0-rc.6).
-- Upgrade to `node v10`.
+## 3.0.0 (2019-01-27)
+- Bump [`thelounge`][1] to [`v3.0.0`](https://github.com/thelounge/thelounge/releases/tag/v3.0.0).
+- Upgrade to `node v10` base images.
 
 #### Breaking Changes
 - Rename the image from `thelounge/lounge` to [`thelounge/thelounge`](https://hub.docker.com/r/thelounge/thelounge/) on DockerHub.
+- Drop from root user in the container.
+    - This may affect file permissions on the *host system* of mounted data directories. To resolve this, refer to running as a custom user in the [README](https://github.com/thelounge/thelounge-docker/blob/3.0.0/README.md).
+    - These file permission errors are restricted to the host system only, The Lounge will continue to run successfully in the container.
 - Change default data path from `/home/lounge/data` to `/var/opt/thelounge`.
     - This requires you to update your mounted data volume to mount at `/var/opt/thelounge`.
+- Remove support for the `HOST`, `PORT` and `BIND` environment variables.
+    - You can instead set these config options in the config file, or by running the container with a custom command where you supply the configurations.
 - Remove the `slim` flavour.
 - No longer installs `vim` and `nano` in the base image.
 
