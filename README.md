@@ -41,6 +41,9 @@ $ docker run --detach \
 
 The Lounge reads and stores all of its configuration, logs and other data at `/var/opt/thelounge`.
 
+By default, The Lounge will run using the `node (1000:1000)` system user in the container, leading to mounted data directories
+on the host system being owned by said user. This is customizable by changing the container user (see [Container user (advanced usage)](#container-user-advanced-usage)).
+
 _You will probably want to persist the data at this location by using [one of the means](https://docs.docker.com/storage/) to do so._
 
 ### Adding users
@@ -72,6 +75,11 @@ $ docker run --detach \
              --restart always \
              thelounge/thelounge:3.0.0-rc.6
 ```
+
+### Container user (advanced usage)
+
+By default, The Lounge will run using the `node (1000:1000)` user. This is customizable by running the container as a different, non-root, user.
+Beware that this may cause permission issues when a container process tries reading from the data disk unless you have manually set the permissions correctly.
 
 ### Environment variables (advanced usage)
 

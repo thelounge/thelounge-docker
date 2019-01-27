@@ -23,11 +23,28 @@ fi
 if [ "$*" = "thelounge start" ]; then
     # if the supplied command is the default (see the CMD directive in Dockerfile), append any
     # optional flags defined via environment variables
-    exec "$@" \
-        $CONF_OPT_HOST \
-        $CONF_OPT_PORT \
-        $CONF_OPT_BIND \
-        ;
+    if [ "$(id -u)" = '0' ]; then
+        find "${THELOUNGE_HOME}" \! -user node -exec chown node '{}' +
+        # use the node user by default
+        exec gosu node "$@" \
+            $CONF_OPT_HOST \
+            $CONF_OPT_PORT \
+            $CONF_OPT_BIND \
+            ;
+    else
+        # otherwise, allow for a custom user (e.g. through --user CLI arg)
+        exec "$@" \
+            $CONF_OPT_HOST \
+            $CONF_OPT_PORT \
+            $CONF_OPT_BIND \
+            ;
+    fi
+fi
+
+if [ "$(id -u)" = '0' ]; then
+    # use the node user by default
+    exec gosu node "$@"
 else
+    # otherwise, allow for a custom user (e.g. through --user CLI arg)
     exec "$@"
 fi

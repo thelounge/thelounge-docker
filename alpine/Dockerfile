@@ -14,6 +14,9 @@ CMD ["thelounge", "start"]
 
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
+RUN apk add --no-cache \
+    'su-exec>=0.2'
+
 # Install thelounge.
 ARG THELOUNGE_VERSION=3.0.0-rc.6
 RUN yarn --non-interactive global add thelounge@${THELOUNGE_VERSION} && \
