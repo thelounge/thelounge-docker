@@ -50,17 +50,19 @@ $ docker exec --user node -it [container_name] thelounge add MyUser
 
 Since root permissions are dropped in the container the default port 113 can not be used as it is within the
 priviliged port range. Instead, use a higher port in your The Lounge identd configuration and map it back to 113
-on your host system, like so:
+on your host system, for example like so:
 
 ```
 $ docker run --detach \
              --name thelounge \
-             --publish 113:1113 \
+             --publish 113:9001 \
              --publish 9000:9000 \
              --volume ~/.thelounge:/var/opt/thelounge \
              --restart always \
              thelounge/thelounge:latest
 ```
+
+Refer to the [identd / oidentd docs](https://thelounge.chat/docs/guides/identd-and-oidentd) for more detailed information.
 
 ### Data directory
 
