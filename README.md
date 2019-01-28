@@ -37,6 +37,33 @@ $ docker run --detach \
              thelounge/thelounge:latest
 ```
 
+### Executing commands in the container
+
+Due to the way root permissions are dropped in the container, it's highly recommended to pass the `--user node` argument to any
+commands you execute in the container via Docker to ensure that file permissions retain the correct owner, like so:
+
+```
+$ docker exec --user node -it [container_name] thelounge add MyUser
+```
+
+### Configuring identd
+
+Since root permissions are dropped in the container the default port 113 can not be used as it is within the
+priviliged port range. Instead, use a higher port in your The Lounge identd configuration and map it back to 113
+on your host system, for example like so:
+
+```
+$ docker run --detach \
+             --name thelounge \
+             --publish 113:9001 \
+             --publish 9000:9000 \
+             --volume ~/.thelounge:/var/opt/thelounge \
+             --restart always \
+             thelounge/thelounge:latest
+```
+
+Refer to the [identd / oidentd docs](https://thelounge.chat/docs/guides/identd-and-oidentd) for more detailed information.
+
 ### Data directory
 
 The Lounge reads and stores all of its configuration, logs and other data at `/var/opt/thelounge`.
