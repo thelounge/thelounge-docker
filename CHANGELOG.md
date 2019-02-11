@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.1 (2019-02-11)
+- Bump [`thelounge`][1] to [`v3.0.1`](https://github.com/thelounge/thelounge/releases/tag/v3.0.1).
+
 ## 3.0.0 (2019-01-27)
 - Bump [`thelounge`][1] to [`v3.0.0`](https://github.com/thelounge/thelounge/releases/tag/v3.0.0).
 - Upgrade to `node v10` base images.
