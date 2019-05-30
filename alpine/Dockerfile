@@ -16,5 +16,5 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Install thelounge.
 ARG THELOUNGE_VERSION=3.1.0-pre.1
-RUN yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
+RUN yarn --non-interactive --frozen-lockfile --verbose global add thelounge@${THELOUNGE_VERSION} && \
     yarn --non-interactive cache clean
