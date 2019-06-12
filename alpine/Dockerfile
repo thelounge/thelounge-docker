@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:12-alpine
 
 ENV NODE_ENV production
 
@@ -16,5 +16,8 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Install thelounge.
 ARG THELOUNGE_VERSION=3.0.1
-RUN yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
-    yarn --non-interactive cache clean
+RUN apk add --virtual .yarn-dep git && \
+    yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
+    yarn --non-interactive cache clean && \
+    apk del .yarn-dep && \
+    rm -rf /var/cache/apk/*
