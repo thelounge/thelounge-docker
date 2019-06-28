@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.1.0-pre.3 (2019-06-28)
+- Bump [`thelounge`][1] to [`v3.1.0-pre.3`](https://github.com/thelounge/thelounge/releases/tag/v3.1.0-pre.3).
+
 ## 3.0.1 (2019-02-11)
 - Bump [`thelounge`][1] to [`v3.0.1`](https://github.com/thelounge/thelounge/releases/tag/v3.0.1).
 
