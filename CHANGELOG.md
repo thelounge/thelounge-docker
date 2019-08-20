@@ -1,10 +1,7 @@
 # Changelog
 
-## 3.2.0-rc.2 (2019-08-13)
-- Bump [`thelounge`][1] to [`3.2.0-rc.2`](https://github.com/thelounge/thelounge/releases/tag/v3.2.0-rc.2).
-
-## 3.2.0-rc.1 (2019-08-05)
-- Bump [`thelounge`][1] to [`3.2.0-rc.1`](https://github.com/thelounge/thelounge/releases/tag/v3.2.0-rc.1).
+## 3.2.0 (2019-08-20)
+- Bump [`thelounge`][1] to [`3.2.0`](https://github.com/thelounge/thelounge/releases/tag/v3.2.0).
 
 ## 3.1.1 (2019-07-11)
 - Bump [`thelounge`][1] to [`3.1.1`](https://github.com/thelounge/thelounge/releases/tag/v3.1.1).
