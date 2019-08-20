@@ -1,4 +1,4 @@
-THELOUNGE_VERSION?=3.2.0-rc.2
+THELOUNGE_VERSION?=3.2.0
 ORGANISATION?=thelounge
 
 all: main alpine
