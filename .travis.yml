@@ -17,6 +17,7 @@ jobs:
         - sleep 3 # wait for the server to (hopefully) start
         - curl -sL localhost:9001 | grep "<title>The Lounge</title>"
         - stat "${mount_dir}/config.js"
+        - docker logs main
     - name: "Alpine build"
       stage: test
       script:
@@ -27,3 +28,4 @@ jobs:
         - sleep 3 # wait for the server to (hopefully) start
         - curl -sL localhost:9002 | grep "<title>The Lounge</title>"
         - stat "${mount_dir}/config.js"
+        - docker logs alpine
