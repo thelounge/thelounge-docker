@@ -1,0 +1,35 @@
+name: Alpine image
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build and test alpine image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set env
+        run: echo "::set-env name=mount_dir::$(mktemp -d)"
+
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Build Docker image
+        run: docker build -t thelounge:alpine -f alpine/Dockerfile alpine
+
+      - name: Start Docker container
+        run: docker run --user "$UID" -v "${mount_dir}:/var/opt/thelounge" -d -p 9001:9000 --name main thelounge:main
+
+      - name: Check TheLounge version
+        run: docker exec alpine thelounge --version | grep --color=never -E "^v[0-9]\.[0-9]\.[0-9]" | cut -c 2- | grep -f /dev/stdin alpine/Dockerfile
+
+      - name: Wait for server to (hopefully) start
+        run: sleep 3
+
+      - name: Check HTML output
+        run: curl -sL localhost:9002 | grep "<title>The Lounge</title>"
+
+      - name: Check for config.js to be created in the mounted host system directory
+        run: stat "${mount_dir}/config.js"
+
+      - name: Logs
+        run: docker logs alpine
