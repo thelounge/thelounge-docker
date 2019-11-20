@@ -17,7 +17,7 @@ jobs:
         run: docker build -t thelounge:alpine -f alpine/Dockerfile alpine
 
       - name: Start Docker container
-        run: docker run --user "$UID" -v "${mount_dir}:/var/opt/thelounge" -d -p 9001:9000 --name main thelounge:main
+        run: docker run --user "$UID" -v "${mount_dir}:/var/opt/thelounge" -d -p 9001:9000 --name alpine thelounge:alpine
 
       - name: Check TheLounge version
         run: docker exec alpine thelounge --version | grep --color=never -E "^v[0-9]\.[0-9]\.[0-9]" | cut -c 2- | grep -f /dev/stdin alpine/Dockerfile
