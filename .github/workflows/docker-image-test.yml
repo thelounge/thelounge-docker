@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    name: Build and test Docker images
+    name: Build
     runs-on: ubuntu-latest
     strategy:
       matrix:
