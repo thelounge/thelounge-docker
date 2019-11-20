@@ -26,7 +26,7 @@ jobs:
         run: sleep 3
 
       - name: Check HTML output
-        run: curl -sL localhost:9002 | grep "<title>The Lounge</title>"
+        run: curl -sL localhost:9001 | grep "<title>The Lounge</title>"
 
       - name: Check for config.js to be created in the mounted host system directory
         run: stat "${mount_dir}/config.js"
