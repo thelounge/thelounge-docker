@@ -1,0 +1,38 @@
+name: Docker image
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dockerfile: [Dockerfile, alpine/Dockerfile]
+    steps:
+      - name: Set env
+        run: echo "::set-env name=mount_dir::$(mktemp -d)"
+
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Build Docker image
+        run: docker build -t thelounge -f ${{ matrix.dockerfile }} .
+
+      - name: Start Docker container
+        run: docker run --user "$UID" -v "${mount_dir}:/var/opt/thelounge" -d -p 9001:9000 --name thelounge thelounge
+
+      - name: Check TheLounge version
+        run: docker exec thelounge thelounge --version | grep --color=never -E "^v[0-9]\.[0-9]\.[0-9]" | cut -c 2- | grep -f /dev/stdin ${{ matrix.dockerfile }}
+
+      - name: Wait for server to (hopefully) start
+        run: sleep 3
+
+      - name: Check HTML output
+        run: curl -sL localhost:9001 | grep "<title>The Lounge</title>"
+
+      - name: Check for config.js to be created in the mounted host system directory
+        run: stat "${mount_dir}/config.js"
+
+      - name: Logs
+        run: docker logs thelounge
