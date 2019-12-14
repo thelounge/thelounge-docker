@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.0.0-pre.1 (2019-12-15)
+- Bump [`thelounge`][1] to [`4.0.0-pre.1`](https://github.com/thelounge/thelounge/releases/tag/v4.0.0-pre.1).
+
 ## 3.3.0 (2019-10-28)
 - Bump [`thelounge`][1] to [`3.3.0`](https://github.com/thelounge/thelounge/releases/tag/v3.3.0).
 - Upgrade base images to use Node.js 12.
