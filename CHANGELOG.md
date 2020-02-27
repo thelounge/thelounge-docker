@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.1.0-rc.1 (2020-02-27)
+- Bump [`thelounge`][1] to [`4.1.0-rc.1`](https://github.com/thelounge/thelounge/releases/tag/v4.1.0-rc.1).
+
 ## 4.0.0 (2020-01-01)
 - Bump [`thelounge`][1] to [`4.0.0`](https://github.com/thelounge/thelounge/releases/tag/v4.0.0).
 
