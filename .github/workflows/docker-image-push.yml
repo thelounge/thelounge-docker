@@ -32,7 +32,7 @@ jobs:
 
       - name: Build Docker image
         env:
-          PLATFORMS: linux/amd64,linux/arm64,linux/arm/v7
+          PLATFORMS: linux/amd64,linux/arm64/v8,linux/arm/v7
           DOCKER_REPOSITORY: thelounge/thelounge
         run: |
           VERSION="$(git describe --exact-match --tags)"
