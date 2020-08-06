@@ -1,4 +1,4 @@
-name: Docker image
+name: Test docker containers
 
 on: [push, pull_request]
 
