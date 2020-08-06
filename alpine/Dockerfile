@@ -16,5 +16,7 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Install thelounge.
 ARG THELOUNGE_VERSION=4.2.0-pre.2
-RUN yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
-    yarn --non-interactive cache clean
+RUN apk --update --no-cache add python build-base && \
+    yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
+    yarn --non-interactive cache clean && \
+    apk del python build-base
