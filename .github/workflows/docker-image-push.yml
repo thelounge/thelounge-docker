@@ -1,0 +1,58 @@
+name: Build (and push) multi-arch Docker image
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    # We want a newer version of qemu: https://bugs.launchpad.net/ubuntu/+source/qemu/+bug/1815100
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+      matrix:
+        dockerfile: [Dockerfile, alpine/Dockerfile]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Docker login
+        if: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/tags/') }}
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin docker.io
+
+      - name: Setup buildx
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y qemu-user-static
+          docker buildx create --use
+
+      - name: Build Docker image
+        env:
+          PLATFORMS: linux/amd64,linux/arm64/v8,linux/arm/v7
+          DOCKER_REPOSITORY: thelounge/thelounge
+        run: |
+          TAG="$(git rev-parse --short HEAD)"
+          EXTRA_ARG=()
+          # Only push on regular push (!= pull_request)
+          if [ "${GITHUB_EVENT_NAME}" = "push" ] && grep -q "^refs/tags/" <<< "${GITHUB_REF}"; then
+            EXTRA_ARG+=("--push")
+            VERSION="$(git describe --exact-match --tags)"
+            TAG="${VERSION}"
+            LATEST_TAG="latest"
+            if grep -q "^alpine/" <<< "${{ matrix.dockerfile }}"; then
+              TAG="${TAG}-alpine"
+              LATEST_TAG="alpine"
+            fi
+            # If not a pre-release push LATEST_TAG
+            if grep -qE "^[0-9]*\.[0-9]*\.[0-9]*$" <<< "${VERSION}"; then
+              EXTRA_ARG+=("--tag" "${DOCKER_REPOSITORY}:${LATEST_TAG}")
+            fi
+          fi
+          docker buildx build \
+            --platform "${PLATFORMS}" \
+            --tag "${DOCKER_REPOSITORY}:${TAG}" \
+            "${EXTRA_ARG[@]}" \
+            --file "${{ matrix.dockerfile }}" \
+            .
