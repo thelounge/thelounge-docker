@@ -2,6 +2,7 @@
 
 ## 4.2.0 (2020-08-20)
 - Bump [`thelounge`][1] to [`4.2.0`](https://github.com/thelounge/thelounge/releases/tag/v4.2.0).
+- Add support for ARM (ARM64 + ARMv7) images ([#109](https://github.com/thelounge/thelounge-docker/pull/109)) by [@klausenbusk](https://github.com/klausenbusk)
 
 ## 4.1.0 (2020-03-09)
 - Bump [`thelounge`][1] to [`4.1.0`](https://github.com/thelounge/thelounge/releases/tag/v4.1.0).
