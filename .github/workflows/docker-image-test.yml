@@ -11,7 +11,7 @@ jobs:
         dockerfile: [Dockerfile, alpine/Dockerfile]
     steps:
       - name: Set env
-        run: echo "::set-env name=mount_dir::$(mktemp -d)"
+        run: echo "mount_dir=$(mktemp -d)" >> $GITHUB_ENV
 
       - name: Checkout
         uses: actions/checkout@v1
