@@ -1,13 +1,23 @@
 #!/bin/bash
 
+command -v gsed &> /dev/null || {
+    >&2 echo "gsed command missing"
+    exit 1
+}
+
 NEW_VERSION="$1"
+
+if [[ ! $NEW_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+ ]]; then
+    >&2 echo "Provided version (\"$NEW_VERSION\") is not in a valid format."
+    exit 1
+fi
 
 replace_regex_in_file() {
     local REGEX="$1"
     shift 1
     local FILES=$@
     for file in $FILES; do
-        sed -i -E "s/${REGEX}/\1${NEW_VERSION}/" "$file"
+        gsed -i -E "s/${REGEX}/\1${NEW_VERSION}/" "$file"
     done
 }
 

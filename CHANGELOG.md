@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.3.0-pre.1 (2021-03-16)
+- Bump [`thelounge`][1] to [`4.3.0-pre.1`](https://github.com/thelounge/thelounge/releases/tag/v4.3.0-pre.1).
+- Bump Node version from 12 to 14 (LTS).
+
 ## 4.2.0 (2020-08-20)
 - Bump [`thelounge`][1] to [`4.2.0`](https://github.com/thelounge/thelounge/releases/tag/v4.2.0).
 - Add support for ARM (ARM64 + ARMv7) images ([#109](https://github.com/thelounge/thelounge-docker/pull/109)) by [@klausenbusk](https://github.com/klausenbusk)
