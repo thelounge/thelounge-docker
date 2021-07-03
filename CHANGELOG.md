@@ -1,10 +1,10 @@
 # Changelog
 
-## 4.3.0-pre.3 (2021-06-30)
-- Bump [`thelounge`][1] to [`4.3.0-pre.3`](https://github.com/thelounge/thelounge/releases/tag/v4.3.0-pre.3).
+## 4.3.0-pre.4 (2021-07-04)
+- Bump [`thelounge`][1] to [`4.3.0-pre.4`](https://github.com/thelounge/thelounge/releases/tag/v4.3.0-pre.4).
 - Bump Node version from 12 to 14 (LTS).
 
-*Note: ARM images for 4.3.0-pre.3 are still being worked on.*
+*Note: ARM images for 4.3.0-pre.4 are still being worked on.*
 
 ## 4.2.0 (2020-08-20)
 - Bump [`thelounge`][1] to [`4.2.0`](https://github.com/thelounge/thelounge/releases/tag/v4.2.0).
