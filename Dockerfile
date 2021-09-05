@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node:lts-bullseye
 
 ENV NODE_ENV production
 
