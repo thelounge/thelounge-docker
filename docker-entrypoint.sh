@@ -11,7 +11,7 @@ if [ "$1" = "thelounge" ]; then
   set -- "$1" "${ARGS[@]}" "${@:2}"
 fi
 
-if [ "$1" = "thelounge" -a "$(id -u)" = '0' ]; then
+if [ "$1" = "thelounge" ] && [ "$(id -u)" = '0' ]; then
     find "${THELOUNGE_HOME}" \! -user node -exec chown node '{}' +
     exec su node -c "$*"
 fi

@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:lts-bullseye
 
 ENV NODE_ENV production
 
@@ -15,6 +15,6 @@ CMD ["thelounge", "start"]
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Install thelounge.
-ARG THELOUNGE_VERSION=4.1.0
+ARG THELOUNGE_VERSION=4.3.0-pre.4
 RUN yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
     yarn --non-interactive cache clean
