@@ -9,10 +9,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # platform: [linux/amd64, linux/arm64/v8, linux/arm/v7]
-        # dockerfile: [Dockerfile, alpine/Dockerfile]
-        platform: [linux/arm64/v8]
-        dockerfile: [alpine/Dockerfile]
+        platform: [linux/amd64, linux/arm64/v8, linux/arm/v7]
+        dockerfile: [Dockerfile, alpine/Dockerfile]
     steps:
       - name: Set env
         run: echo "mount_dir=$(mktemp -d)" >> $GITHUB_ENV
@@ -45,6 +43,9 @@ jobs:
             (curl -sL localhost:9001 | grep "<title>The Lounge</title>") && s=0 && break || s=$? && sleep 1;
           done
           exit $s
+
+      - name: Check for no ERROR logs
+        run: docker logs thelounge | grep "\[ERROR\]" && exit 1 || exit 0
 
       - name: Check for config.js to be created in the mounted host system directory
         run: stat "${mount_dir}/config.js"
