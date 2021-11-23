@@ -31,7 +31,7 @@ jobs:
           install: true
 
       - name: Build Docker image
-        run: docker build --platform ${{ matrix.platform }} -t thelounge -f ${{ matrix.dockerfile }} .
+        run: docker build --platform ${{ matrix.platform }} --load -t thelounge -f ${{ matrix.dockerfile }} .
 
       - name: List images
         run: docker images
