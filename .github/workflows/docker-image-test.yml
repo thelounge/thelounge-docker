@@ -5,7 +5,8 @@ on: [push, pull_request]
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    # We want a newer version of qemu: https://bugs.launchpad.net/ubuntu/+source/qemu/+bug/1815100
+    runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
@@ -16,7 +17,16 @@ jobs:
         run: echo "mount_dir=$(mktemp -d)" >> $GITHUB_ENV
 
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: docker/setup-buildx-action@v1
+        with:
+          install: true
 
       - name: Build Docker image
         run: docker build --platform ${{ matrix.platform }} -t thelounge -f ${{ matrix.dockerfile }} .
