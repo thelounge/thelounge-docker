@@ -1,7 +1,7 @@
 # Changelog
 
-## 4.3.0-rc.2 (2021-11-19)
-- Bump [`thelounge`][1] to [`4.3.0-rc.2`](https://github.com/thelounge/thelounge/releases/tag/v4.3.0-rc.2).
+## 4.3.0 (2021-11-23)
+- Bump [`thelounge`][1] to [`4.3.0`](https://github.com/thelounge/thelounge/releases/tag/v4.3.0).
 - Upgrade Node.js base images from 12 to LTS.
 
 ## 4.2.0 (2020-08-20)
