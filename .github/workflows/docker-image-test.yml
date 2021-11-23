@@ -31,9 +31,6 @@ jobs:
       - name: Build Docker image
         run: docker build --platform ${{ matrix.platform }} --load -t thelounge -f ${{ matrix.dockerfile }} .
 
-      - name: List images
-        run: docker images
-
       - name: Start Docker container
         run: docker run --platform ${{ matrix.platform }} --user "$UID" -v "${mount_dir}:/var/opt/thelounge" -d -p 9001:9000 --name thelounge thelounge
 
@@ -48,6 +45,9 @@ jobs:
 
       - name: Check for config.js to be created in the mounted host system directory
         run: stat "${mount_dir}/config.js"
+
+      - name: Container context
+        run: docker exec thelounge uname -a
 
       - name: Logs
         run: docker logs thelounge
