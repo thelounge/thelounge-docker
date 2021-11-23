@@ -16,5 +16,11 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Install thelounge.
 ARG THELOUNGE_VERSION=4.3.0
-RUN yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
-    yarn --non-interactive cache clean
+RUN apt update && apt install -y python2 g++ make && \
+    ln -s $(which python2) /usr/bin/python && \
+    yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
+    yarn --non-interactive cache clean && \
+    apt remove -y python2 g++ make && \
+    apt autoremove -y && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm -f /usr/bin/python
