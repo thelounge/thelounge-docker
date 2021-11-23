@@ -5,8 +5,7 @@ on: [push, pull_request]
 jobs:
   build:
     name: Build
-    # We want a newer version of qemu: https://bugs.launchpad.net/ubuntu/+source/qemu/+bug/1815100
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -37,11 +36,13 @@ jobs:
       - name: Check TheLounge version
         run: docker exec thelounge thelounge --version | grep --color=never -E "^v[0-9]\.[0-9]\.[0-9]" | cut -c 2- | grep -f /dev/stdin ${{ matrix.dockerfile }}
 
-      - name: Wait for server to (hopefully) start
-        run: sleep 3
-
       - name: Check HTML output
-        run: curl -sL localhost:9001 | grep "<title>The Lounge</title>"
+        run: |
+          # Retry Wait for server to start.
+          for i in {1..10}; do
+            (curl -sL localhost:9001 | grep "<title>The Lounge</title>") && s=0 && break || s=$? && sleep 1;
+          done
+          exit $s
 
       - name: Check for config.js to be created in the mounted host system directory
         run: stat "${mount_dir}/config.js"
