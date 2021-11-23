@@ -8,7 +8,7 @@ TAG="$VERSION"
 MAJOR_TAG="$(sed -nre 's/^([0-9]+).*/\1/p' <<< "$VERSION")"
 LATEST_TAG="latest"
 
-if grep -q "^alpine/" <<< "${{ matrix.dockerfile }}"; then
+if grep -q "^alpine/" <<< "${DOCKERFILE}"; then
     TAG="${VERSION}-alpine"
     MAJOR_TAG="${MAJOR_TAG}-alpine"
     LATEST_TAG="alpine"
@@ -25,5 +25,5 @@ docker buildx build \
     --platform "${PLATFORMS}" \
     --tag "${DOCKER_REPOSITORY}:${TAG}" \
     "${EXTRA_ARG[@]}" \
-    --file "${{ matrix.dockerfile }}" \
+    --file "${DOCKERFILE}" \
     .
