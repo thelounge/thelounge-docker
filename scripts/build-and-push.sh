@@ -3,7 +3,7 @@
 
 set -euo pipefail
 
-VERSION="$GITHUB_REF"
+VERSION="$(git describe --exact-match --tags HEAD)"
 TAG="$VERSION"
 MAJOR_TAG="$(sed -nre 's/^([0-9]+).*/\1/p' <<< "$VERSION")"
 LATEST_TAG="latest"
