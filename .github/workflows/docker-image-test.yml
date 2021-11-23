@@ -47,7 +47,9 @@ jobs:
         run: stat "${mount_dir}/config.js"
 
       - name: Container context
+        if: always()
         run: docker exec thelounge uname -a
 
       - name: Logs
+        if: always()
         run: docker logs thelounge
