@@ -10,8 +10,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [linux/amd64, linux/arm64/v8, linux/arm/v7]
-        dockerfile: [Dockerfile, alpine/Dockerfile]
+        # platform: [linux/amd64, linux/arm64/v8, linux/arm/v7]
+        # dockerfile: [Dockerfile, alpine/Dockerfile]
+        platform: [linux/amd64]
+        dockerfile: [Dockerfile]
     steps:
       - name: Set env
         run: echo "mount_dir=$(mktemp -d)" >> $GITHUB_ENV
@@ -30,6 +32,9 @@ jobs:
 
       - name: Build Docker image
         run: docker build --platform ${{ matrix.platform }} -t thelounge -f ${{ matrix.dockerfile }} .
+
+      - name: List images
+        run: docker images
 
       - name: Start Docker container
         run: docker run --platform ${{ matrix.platform }} --user "$UID" -v "${mount_dir}:/var/opt/thelounge" -d -p 9001:9000 --name thelounge thelounge
