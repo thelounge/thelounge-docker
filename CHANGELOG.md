@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### Breaking changes
+- Only provide an alpine image. The `:alpine` tag will now be `:latest`. Versioned tags will also no longer have the `-alpine` suffix.
+
 ## 4.3.0 (2021-11-23)
 - Bump [`thelounge`][1] to [`4.3.0`](https://github.com/thelounge/thelounge/releases/tag/v4.3.0).
 - Upgrade Node.js base images from 12 to LTS.

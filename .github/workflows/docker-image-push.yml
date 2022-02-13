@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        dockerfile: [Dockerfile, alpine/Dockerfile]
+        dockerfile: [Dockerfile]
     steps:
       - name: Checkout
         uses: actions/checkout@v1
