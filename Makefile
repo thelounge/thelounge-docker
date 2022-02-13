@@ -1,12 +1,9 @@
 THELOUNGE_VERSION?=4.3.1-rc.1
 ORGANISATION?=thelounge
 
-all: main alpine
+all: main
 
 main:
 	docker build -t ${ORGANISATION}/thelounge:${THELOUNGE_VERSION} --build-arg THELOUNGE_VERSION=${THELOUNGE_VERSION} .
 
-alpine:
-	docker build -f alpine/Dockerfile -t ${ORGANISATION}/thelounge:${THELOUNGE_VERSION}-alpine --build-arg THELOUNGE_VERSION=${THELOUNGE_VERSION} alpine
-
-.PHONY: main alpine
+.PHONY: main
