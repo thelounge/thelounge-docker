@@ -1,5 +1,8 @@
 # Changelog
 
+## Unreleased
+- Rebuild latest stable release images on a weekly basis.
+
 ## 4.3.0 (2021-11-23)
 - Bump [`thelounge`][1] to [`4.3.0`](https://github.com/thelounge/thelounge/releases/tag/v4.3.0).
 - Upgrade Node.js base images from 12 to LTS.
