@@ -1,8 +1,9 @@
 # Changelog
 
 ## Unreleased
+- Rebuild latest stable release images on a weekly basis.
 
-### Breaking changes
+#### Breaking changes
 - Only provide an alpine image. The `:alpine` tag will now be `:latest`. Versioned tags will also no longer have the `-alpine` suffix.
 
 ## 4.3.0 (2021-11-23)

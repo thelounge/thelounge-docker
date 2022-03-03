@@ -1,6 +1,8 @@
 name: Build and push multi-arch Docker image
 
 on:
+  schedule:
+    - cron: '0 9 * * FRI'
   release:
     types: [published]
 
@@ -16,6 +18,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+        with:
+          fetch-depth: 0
+
+      - name: Checkout release to build
+        run: |
+          if [[ $GITHUB_EVENT_NAME == schedule ]]; then
+              # Use the latest stable version
+              git checkout "$(git tag -l | grep -E "^[0-9]*\.[0-9]*\.[0-9]*$" | tail -n 1)"
+          fi
 
       - name: Docker login
         env:
