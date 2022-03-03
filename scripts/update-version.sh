@@ -30,6 +30,6 @@ EOF
 }
 
 replace_regex_in_file "(THELOUNGE_VERSION\?=).*$" Makefile
-replace_regex_in_file "(ARG THELOUNGE_VERSION=).*$" alpine/Dockerfile Dockerfile
+replace_regex_in_file "(ARG THELOUNGE_VERSION=).*$" Dockerfile
 
 (echo 2a; changelog_text; echo .; echo w) | ed - CHANGELOG.md

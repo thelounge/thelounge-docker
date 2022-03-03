@@ -1,4 +1,4 @@
-FROM node:lts-bullseye
+FROM node:lts-alpine
 
 ENV NODE_ENV production
 
@@ -15,12 +15,8 @@ CMD ["thelounge", "start"]
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Install thelounge.
-ARG THELOUNGE_VERSION=4.3.0
-RUN apt update && apt install -y python2 g++ make && \
-    ln -s $(which python2) /usr/bin/python && \
+ARG THELOUNGE_VERSION=4.3.1-rc.1
+RUN apk --update --no-cache --virtual build-deps add python2 build-base git && \
     yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
     yarn --non-interactive cache clean && \
-    apt remove -y python2 g++ make && \
-    apt autoremove -y && \
-    rm -rf /var/lib/apt/lists/* && \
-    rm -f /usr/bin/python
+    apk del build-deps
