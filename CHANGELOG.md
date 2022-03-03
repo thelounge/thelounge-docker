@@ -1,7 +1,8 @@
 # Changelog
 
-## Unreleased
+## 4.3.1-rc.1 (2022-03-03)
 - Rebuild latest stable release images on a weekly basis.
+- Bump [`thelounge`][1] to [`4.3.1-rc.1`](https://github.com/thelounge/thelounge/releases/tag/v4.3.1-rc.1).
 
 ## 4.3.0 (2021-11-23)
 - Bump [`thelounge`][1] to [`4.3.0`](https://github.com/thelounge/thelounge/releases/tag/v4.3.0).
