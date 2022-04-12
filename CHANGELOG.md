@@ -1,8 +1,8 @@
 # Changelog
 
-## 4.3.1-rc.1 (2022-03-03)
+## 4.3.1 (2022-04-12)
 - Rebuild latest stable release images on a weekly basis.
-- Bump [`thelounge`][1] to [`4.3.1-rc.1`](https://github.com/thelounge/thelounge/releases/tag/v4.3.1-rc.1).
+- Bump [`thelounge`][1] to [`4.3.1`](https://github.com/thelounge/thelounge/releases/tag/v4.3.1).
 
 #### Breaking changes
 - Only provide an alpine image. The `:alpine` tag will now be `:latest`. Versioned tags will also no longer have the `-alpine` suffix.
