@@ -103,3 +103,33 @@ By default, The Lounge will run using the `node (1000:1000)` user. This is custo
 Beware that this may cause permission issues when a container process tries reading from the data disk unless you have manually set the permissions correctly.
 
 Also keep in mind that whenever executing one-off commands in the container you need to explicitly set the correct user.
+
+### Image building (advanced usage)
+
+If you would like to build your own Docker image, you can do so with the following command:
+
+```sh
+docker build -t thelounge:custom .
+```
+
+On some older hardware, you may encounter build errors if the current version of one or more dependencies does not publish pre-compiled binaries for your architecture anymore. The build process can compile the binaries from source, but you will need to install the necessary build dependencies first. To do this, you can make the following changes to your local copy of the Dockerfile:
+
+- Add additional required packages to the `apk add` command. This normally includes `python3` and `build-base`.
+- Link any dependencies if necessary. This should not be required, but there have been cases where a dependency expects the Python binary to be available at `python` without checking to see if `python3` or `python2` are available. You should only worry about adding this kind of link if you receive build errors.
+
+For example, you may change the original file from:
+
+```dockerfile
+...
+RUN apk --update --no-cache --virtual build-deps add git && \
+...
+```
+
+to:
+
+```dockerfile
+...
+RUN apk --update --no-cache --virtual build-deps add git python3 build-base && \
+    ln -sf python3 /usr/bin/python && \
+...
+```
