@@ -20,4 +20,5 @@ RUN apk --update --no-cache --virtual build-deps add python3 build-base git && \
     ln -sf python3 /usr/bin/python && \
     yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
     yarn --non-interactive cache clean && \
-    apk del --purge build-deps
+    apk del --purge build-deps && \
+    rm -rf /root/.cache /tmp /usr/bin/python
