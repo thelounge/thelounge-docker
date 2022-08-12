@@ -19,5 +19,5 @@ docker buildx build \
     --platform "${PLATFORMS}" \
     --tag "${DOCKER_REPOSITORY}:${TAG}" \
     "${EXTRA_ARG[@]}" \
-    --file "${DOCKERFILE}" \
+    --file Dockerfile \
     .
