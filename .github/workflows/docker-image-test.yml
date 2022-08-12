@@ -46,7 +46,7 @@ jobs:
           exit $s
 
       - name: Check for no ERROR logs
-        run: docker logs thelounge | grep "\[ERROR\]" && exit 1 || exit 0
+        run: docker logs thelounge 2>&1 | grep -vz "\[ERROR\]"
 
       - name: Check for config.js to be created in the mounted host system directory
         run: stat "${mount_dir}/config.js"
