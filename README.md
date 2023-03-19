@@ -34,7 +34,7 @@ $ docker run --detach \
              --publish 9000:9000 \
              --volume ~/.thelounge:/var/opt/thelounge \
              --restart always \
-             ghcr.io/thelounge/thelounge:latest
+             thelounge/thelounge:latest
 ```
 
 ### Executing commands in the container
@@ -59,7 +59,7 @@ $ docker run --detach \
              --publish 9000:9000 \
              --volume ~/.thelounge:/var/opt/thelounge \
              --restart always \
-             ghcr.io/thelounge/thelounge:latest
+             thelounge/thelounge:latest
 ```
 
 Refer to the [identd / oidentd docs](https://thelounge.chat/docs/guides/identd-and-oidentd) for more detailed information.
@@ -94,7 +94,7 @@ $ docker run --detach \
              --publish 5000:9000 \ # Change host port to listen on port 5000
              --volume ~/.thelounge:/var/opt/thelounge \
              --restart always \
-             ghcr.io/thelounge/thelounge:latest
+             thelounge/thelounge:latest
 ```
 
 ### Container user (advanced usage)
