@@ -5,6 +5,12 @@ on:
     - cron: '0 9 * * FRI'
   release:
     types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        type: string
+        description: Which tag to rebuild and push.
+        required: true
 
 jobs:
   build:
@@ -19,12 +25,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Checkout release to build
-        run: |
-          if [[ $GITHUB_EVENT_NAME == schedule ]]; then
-              # Use the latest stable version
-              git checkout "$(git tag -l | grep -E "^[0-9]*\.[0-9]*\.[0-9]*$" | tail -n 1)"
-          fi
+      - name: Checkout latest stable release
+        if: ${{ github.event_name == 'schedule' }}
+        run: git checkout "$(git tag -l | grep -E "^[0-9]*\.[0-9]*\.[0-9]*$" | tail -n 1)"
+
+      - name: Checkout provided tag
+        if: ${{ inputs.tag }}
+        run: git checkout "${{ inputs.tag }}"
 
       - name: Docker login
         env:
