@@ -18,6 +18,13 @@
 
 To learn more about configuration, usage and features of The Lounge, take a look at [the website](https://thelounge.chat).
 
+### Repositories
+
+Images are pushed to the following repositories:
+
+-   [ghcr.io](https://github.com/thelounge/thelounge-docker/pkgs/container/thelounge): `ghcr.io/thelounge/thelounge`
+-   [DockerHub](https://hub.docker.com/r/thelounge/thelounge): `thelounge/thelounge`
+
 ### Running a container
 
 One can get started quickly by using the example [`docker-compose.yml`](https://github.com/thelounge/docker-lounge/blob/master/docker-compose.yml) file. [What is docker-compose?](https://docs.docker.com/compose/)
