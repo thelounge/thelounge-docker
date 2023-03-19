@@ -18,9 +18,9 @@
 
 To learn more about configuration, usage and features of The Lounge, take a look at [the website](https://thelounge.chat).
 
-### Repositories
+### Registries
 
-Images are pushed to the following repositories:
+Images are available in the following registries:
 
 -   [ghcr.io](https://github.com/thelounge/thelounge-docker/pkgs/container/thelounge): `ghcr.io/thelounge/thelounge`
 -   [DockerHub](https://hub.docker.com/r/thelounge/thelounge): `thelounge/thelounge`
