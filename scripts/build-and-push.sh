@@ -6,18 +6,27 @@ set -euo pipefail
 VERSION="$(git describe --exact-match --tags HEAD)"
 TAG="$VERSION"
 MAJOR_TAG="$(sed -nre 's/^([0-9]+).*/\1/p' <<< "$VERSION")"
-LATEST_TAG="latest"
+DOCKERHUB_IMAGE="thelounge/thelounge"
+GITHUB_IMAGE="ghcr.io/thelounge/thelounge"
+TAGS=(
+    "--tag" "${DOCKERHUB_IMAGE}:${TAG}"
+    "--tag" "${GITHUB_IMAGE}:${TAG}"
+)
 
-# If not a pre-release push LATEST_TAG & MAJOR_TAG
+
+# If not a pre-release push :latest & MAJOR_TAG
 if grep -qE "^[0-9]*\.[0-9]*\.[0-9]*$" <<< "${VERSION}"; then
-    EXTRA_ARG+=("--tag" "${DOCKER_REPOSITORY}:${LATEST_TAG}")
-    EXTRA_ARG+=("--tag" "${DOCKER_REPOSITORY}:${MAJOR_TAG}")
+    TAGS+=(
+        "--tag" "${DOCKERHUB_IMAGE}:latest"
+        "--tag" "${DOCKERHUB_IMAGE}:${MAJOR_TAG}"
+        "--tag" "${GITHUB_IMAGE}:latest"
+        "--tag" "${GITHUB_IMAGE}:${MAJOR_TAG}"
+    )
 fi
 
 docker buildx build \
     --push \
     --platform "${PLATFORMS}" \
-    --tag "${DOCKER_REPOSITORY}:${TAG}" \
-    "${EXTRA_ARG[@]}" \
+    "${TAGS[@]}" \
     --file Dockerfile \
     .

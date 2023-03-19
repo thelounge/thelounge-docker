@@ -44,5 +44,4 @@ jobs:
       - name: Build Docker image
         env:
           PLATFORMS: linux/amd64,linux/arm64/v8,linux/arm/v7
-          DOCKER_REPOSITORY: thelounge/thelounge
         run: ./scripts/build-and-push.sh
