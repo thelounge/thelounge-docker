@@ -18,6 +18,13 @@
 
 To learn more about configuration, usage and features of The Lounge, take a look at [the website](https://thelounge.chat).
 
+### Registries
+
+Images are available in the following registries:
+
+-   [ghcr.io](https://github.com/thelounge/thelounge-docker/pkgs/container/thelounge): `ghcr.io/thelounge/thelounge`
+-   [DockerHub](https://hub.docker.com/r/thelounge/thelounge): `thelounge/thelounge`
+
 ### Running a container
 
 One can get started quickly by using the example [`docker-compose.yml`](https://github.com/thelounge/docker-lounge/blob/master/docker-compose.yml) file. [What is docker-compose?](https://docs.docker.com/compose/)
@@ -34,7 +41,7 @@ $ docker run --detach \
              --publish 9000:9000 \
              --volume ~/.thelounge:/var/opt/thelounge \
              --restart always \
-             thelounge/thelounge:latest
+             ghcr.io/thelounge/thelounge:latest
 ```
 
 ### Executing commands in the container
@@ -59,7 +66,7 @@ $ docker run --detach \
              --publish 9000:9000 \
              --volume ~/.thelounge:/var/opt/thelounge \
              --restart always \
-             thelounge/thelounge:latest
+             ghcr.io/thelounge/thelounge:latest
 ```
 
 Refer to the [identd / oidentd docs](https://thelounge.chat/docs/guides/identd-and-oidentd) for more detailed information.
@@ -94,7 +101,7 @@ $ docker run --detach \
              --publish 5000:9000 \ # Change host port to listen on port 5000
              --volume ~/.thelounge:/var/opt/thelounge \
              --restart always \
-             thelounge/thelounge:latest
+             ghcr.io/thelounge/thelounge:latest
 ```
 
 ### Container user (advanced usage)
