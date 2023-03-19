@@ -1,7 +1,7 @@
 version: '2'
 services:
   thelounge:
-    image: thelounge/thelounge:latest
+    image: ghcr.io/thelounge/thelounge:latest
     container_name: thelounge
     ports:
       - "9000:9000"
