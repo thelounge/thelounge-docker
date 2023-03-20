@@ -15,7 +15,7 @@ CMD ["thelounge", "start"]
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 
 # Install thelounge.
-ARG THELOUNGE_VERSION=4.4.0-pre.1
+ARG THELOUNGE_VERSION=4.4.0-pre.2
 RUN apk --update --no-cache --virtual build-deps add python3 build-base git && \
     ln -sf python3 /usr/bin/python && \
     yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
