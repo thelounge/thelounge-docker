@@ -62,7 +62,7 @@ jobs:
         env:
           PLATFORMS: linux/amd64,linux/arm64/v8,linux/arm/v7
         run: |
-          set -euo pipefail
+          set -euxo pipefail
 
           VERSION="$(git describe --exact-match --tags HEAD)"
           TAG="$VERSION"
