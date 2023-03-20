@@ -12,6 +12,9 @@ on:
         description: Which tag to rebuild and push.
         required: true
 
+env:
+  BUILDX_NO_DEFAULT_ATTESTATIONS: 1
+
 jobs:
   build:
     name: Build
