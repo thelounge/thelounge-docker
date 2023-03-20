@@ -1,6 +1,6 @@
 ![The Lounge](https://raw.githubusercontent.com/thelounge/thelounge.github.io/master/assets/logos/logo/TL_Grey%26Yellow_Vertical_logotype_Transparent_Bg/TL_Grey%26Yellow_Vertical_logotype_Transparent_Bg.png)
 
-#### Docker container for The Lounge, modern web IRC client designed for self-hosting
+#### Docker image for The Lounge, a modern web IRC client designed for self-hosting
 
 **[Website](https://thelounge.chat/) • [Docs](https://thelounge.chat/docs) • [Demo](https://demo.thelounge.chat/)**
 

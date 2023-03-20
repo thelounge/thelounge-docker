@@ -85,6 +85,7 @@ jobs:
           fi
 
           docker buildx build \
+              --label org.opencontainers.artifact.created="$(date --rfc-3339=seconds --utc)" \
               --push \
               --platform "${PLATFORMS}" \
               "${TAGS[@]}" \
