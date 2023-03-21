@@ -59,7 +59,7 @@ jobs:
         env:
           PLATFORMS: linux/amd64,linux/arm64/v8,linux/arm/v7
         run: |
-          set -euo pipefail
+          set -euxo pipefail
 
           VERSION="$(git describe --exact-match --tags HEAD)"
           TAG="$VERSION"
@@ -82,6 +82,7 @@ jobs:
           fi
 
           docker buildx build \
+              --label org.opencontainers.artifact.created="$(date --rfc-3339=seconds --utc)" \
               --push \
               --platform "${PLATFORMS}" \
               "${TAGS[@]}" \
