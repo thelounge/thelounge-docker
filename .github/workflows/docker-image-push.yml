@@ -12,6 +12,10 @@ on:
         description: Which tag to rebuild and push.
         required: true
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build:
     name: Build
