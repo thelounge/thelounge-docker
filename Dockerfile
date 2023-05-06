@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 
-ARG THELOUNGE_VERSION=4.4.0-pre.2
+ARG THELOUNGE_VERSION=4.4.0-rc.1
 
 LABEL org.opencontainers.image.title "Official The Lounge image"
 LABEL org.opencontainers.image.description "Official Docker image for The Lounge, a modern web IRC client designed for self-hosting."

@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.4.0-rc.1 (2023-05-06)
+- Bump [`thelounge`][1] to [`4.4.0-rc.1`](https://github.com/thelounge/thelounge/releases/tag/v4.4.0-rc.1).
+
 ## 4.4.0-pre.2 (2023-03-20)
 - Bump [`thelounge`][1] to [`4.4.0-pre.2`](https://github.com/thelounge/thelounge/releases/tag/v4.4.0-pre.2).
 
