@@ -1,14 +1,8 @@
 # Changelog
 
-## 4.4.0-rc.1 (2023-05-06)
-- Bump [`thelounge`][1] to [`4.4.0-rc.1`](https://github.com/thelounge/thelounge/releases/tag/v4.4.0-rc.1).
-
-## 4.4.0-pre.2 (2023-03-20)
-- Bump [`thelounge`][1] to [`4.4.0-pre.2`](https://github.com/thelounge/thelounge/releases/tag/v4.4.0-pre.2).
-
-## 4.4.0-pre.1 (2023-03-19)
-- Bump [`thelounge`][1] to [`4.4.0-pre.1`](https://github.com/thelounge/thelounge/releases/tag/v4.4.0-pre.1).
-- Also publish images to ghcr.io/thelounge/thelounge, which is the default repository henceforth.
+## 4.4.0 (2023-05-14)
+- Bump [`thelounge`][1] to [`4.4.0`](https://github.com/thelounge/thelounge/releases/tag/v4.4.0).
+- Also publish images to ghcr.io/thelounge/thelounge, which henceforth is the default repository.
 
 ## 4.3.1 (2022-04-12)
 - Rebuild latest stable release images on a weekly basis.
