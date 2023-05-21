@@ -1,4 +1,4 @@
-THELOUNGE_VERSION?=4.4.0
+THELOUNGE_VERSION?=4.4.1-rc.1
 ORGANISATION?=thelounge
 
 all: main

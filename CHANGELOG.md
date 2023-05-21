@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.4.1-rc.1 (2023-05-21)
+- Bump [`thelounge`][1] to [`4.4.1-rc.1`](https://github.com/thelounge/thelounge/releases/tag/v4.4.1-rc.1).
+
 ## 4.4.0 (2023-05-14)
 - Bump [`thelounge`][1] to [`4.4.0`](https://github.com/thelounge/thelounge/releases/tag/v4.4.0).
 - Also publish images to ghcr.io/thelounge/thelounge, which henceforth is the default repository.
