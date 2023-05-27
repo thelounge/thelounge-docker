@@ -19,5 +19,6 @@ jobs:
         with:
           release-type: simple
           package-name: thelounge-docker
+          prerelease: true
           labels: |
             automerge
