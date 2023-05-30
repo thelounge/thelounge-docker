@@ -1,0 +1,24 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "automerge": true,
+    "platformAutomerge": true,
+    "automergeType": "pr",
+    "commitBody": "Release-As: {{newVersion}}",
+    "enabledManagers": ["regex"],
+    "regexManagers": [
+        {
+            "fileMatch": ["Dockerfile", "Makefile"],
+            "matchStrings": [
+                "THELOUNGE_VERSION\\??=(?<currentValue>[^\\s]+)"
+            ],
+            "datasourceTemplate": "npm",
+            "packageNameTemplate": "thelounge"
+        }
+    ],
+    "packageRules": [
+        {
+            "matchPackageNames": ["thelounge"],
+            "allowedVersions": "\\d+\\.\\d+\\.\\d+.*"
+        }
+    ]
+}
