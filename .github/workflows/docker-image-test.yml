@@ -4,7 +4,22 @@ on:
   pull_request:
 
 jobs:
+  diff:
+    name: Check if Dockerfile changed
+    runs-on: ubuntu-latest
+    outputs:
+      did_change: ${{ steps.diff.outputs.any_changed }}
+    steps:
+      - name: Check for changes
+        id: diff
+        uses: tj-actions/changed-files@v35
+        with:
+          files: |
+            Dockerfile
+
   build:
+    needs: [diff]
+    if: ${{ needs.diff.outputs.did_change == 'true' }}
     name: Build
     runs-on: ubuntu-latest
     strategy:
