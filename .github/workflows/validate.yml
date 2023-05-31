@@ -1,0 +1,29 @@
+---
+name: Validate Renovate config
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check for config changes
+        id: diff
+        uses: tj-actions/changed-files@v35
+        with:
+          files: |
+            renovate.json
+
+      - shell: bash
+        if: ${{ steps.diff.outputs.any_changed == 'true' }}
+        run: |
+          set +o pipefail
+          npx -y -p renovate -c renovate-config-validator \
+            | tee /dev/stderr \
+            | grep -Evz '(ERROR|could not be parsed)'
