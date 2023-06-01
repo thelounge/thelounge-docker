@@ -12,7 +12,8 @@
                 "THELOUNGE_VERSION\\??=(?<currentValue>[^\\s]+)"
             ],
             "datasourceTemplate": "npm",
-            "packageNameTemplate": "thelounge"
+            "packageNameTemplate": "thelounge",
+            "depNameTemplate": "thelounge"
         }
     ],
     "packageRules": [
