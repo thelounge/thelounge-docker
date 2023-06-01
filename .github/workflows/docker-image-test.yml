@@ -1,3 +1,4 @@
+---
 name: Test docker containers
 
 on:
@@ -82,3 +83,12 @@ jobs:
       - name: Logs
         if: always()
         run: docker logs thelounge
+
+  # This job is used for branch protection rule
+  build-check:
+    name: Build check
+    runs-on: ubuntu-latest
+    needs: build
+    if: 'failure() || cancelled()'
+    steps:
+      - run: exit 1
