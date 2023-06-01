@@ -19,7 +19,7 @@
     "packageRules": [
         {
             "matchPackageNames": ["thelounge"],
-            "allowedVersions": "*"
+            "ignoreUnstable": false
         }
     ]
 }
