@@ -19,7 +19,7 @@ jobs:
       - name: Check for changes
         id: diff
         run: |
-          if [[ $(git diff --name-only "${GITHUB_BASE_REF}" -- Dockerfile | wc -l) -gt 0 ]]; then
+          if [[ $(git diff --name-only "origin/${GITHUB_BASE_REF}" -- Dockerfile | wc -l) -gt 0 ]]; then
             echo "any_changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "any_changed=false" >> "$GITHUB_OUTPUT"
