@@ -1,5 +1,24 @@
 # Changelog
 
+## [4.4.1-rc.2](https://github.com/thelounge/thelounge-docker/compare/4.4.1-rc.1...4.4.1-rc.2) (2023-06-01)
+
+
+### Features
+
+* automatic releases ([#165](https://github.com/thelounge/thelounge-docker/issues/165)) ([bec4974](https://github.com/thelounge/thelounge-docker/commit/bec4974f558c376acaed9a32ce219ec46239101f))
+
+
+### Bug Fixes
+
+* **release-please:** target master instead of main ([#173](https://github.com/thelounge/thelounge-docker/issues/173)) ([abb97f4](https://github.com/thelounge/thelounge-docker/commit/abb97f49284efe06e05244d6c3401089126c8190))
+* **renovate:** fix npm versioning range ([#169](https://github.com/thelounge/thelounge-docker/issues/169)) ([27fe810](https://github.com/thelounge/thelounge-docker/commit/27fe810b19556af2806d321e2c63e0995d07831b))
+* **renovate:** set ignoreUnstable: false ([#171](https://github.com/thelounge/thelounge-docker/issues/171)) ([3466f9d](https://github.com/thelounge/thelounge-docker/commit/3466f9d68d6c622eac20bbed3ddcb4b86e1b0f37))
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency thelounge to v4.4.1-rc.2 ([#172](https://github.com/thelounge/thelounge-docker/issues/172)) ([3b9f4f0](https://github.com/thelounge/thelounge-docker/commit/3b9f4f0d359dfcf2eaac271d341889c0f23e055d))
+
 ## 4.4.1-rc.1 (2023-05-21)
 - Bump [`thelounge`][1] to [`4.4.1-rc.1`](https://github.com/thelounge/thelounge/releases/tag/v4.4.1-rc.1).
 
