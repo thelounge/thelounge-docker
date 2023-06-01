@@ -10,12 +10,19 @@ jobs:
     outputs:
       did_change: ${{ steps.diff.outputs.any_changed }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
       - name: Check for changes
         id: diff
-        uses: tj-actions/changed-files@v35
-        with:
-          files: |
-            Dockerfile
+        run: |
+          if [[ $(git diff --name-only "${GITHUB_BASE_REF}" -- Dockerfile | wc -l) -gt 0 ]]; then
+            echo "any_changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "any_changed=false" >> "$GITHUB_OUTPUT"
+          fi
 
   build:
     needs: [diff]
@@ -33,6 +40,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1

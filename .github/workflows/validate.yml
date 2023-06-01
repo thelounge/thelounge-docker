@@ -13,12 +13,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Check for config changes
+      - name: Check for changes
         id: diff
-        uses: tj-actions/changed-files@v35
-        with:
-          files: |
-            renovate.json
+        run: |
+          if [[ $(git diff --name-only "${GITHUB_BASE_REF}" -- renovate.json | wc -l) -gt 0 ]]; then
+            echo "any_changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "any_changed=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - shell: bash
         if: ${{ steps.diff.outputs.any_changed == 'true' }}
