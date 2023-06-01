@@ -19,9 +19,8 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         id: release
         with:
+          token: ${{ secrets.PAT }}
           release-type: simple
           package-name: thelounge-docker
           prerelease: true
           include-v-in-tag: false
-          labels: |
-            automerge
