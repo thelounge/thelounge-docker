@@ -7,7 +7,7 @@
     "enabledManagers": ["regex"],
     "regexManagers": [
         {
-            "fileMatch": ["Dockerfile", "Makefile"],
+            "fileMatch": ["Dockerfile"],
             "matchStrings": [
                 "THELOUNGE_VERSION\\??=(?<currentValue>[^\\s]+)"
             ],
