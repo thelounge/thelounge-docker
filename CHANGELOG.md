@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.4.1](https://github.com/thelounge/thelounge-docker/compare/4.4.1-rc.2...4.4.1) (2023-06-18)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency thelounge to v4.4.1 ([#176](https://github.com/thelounge/thelounge-docker/issues/176)) ([ca61267](https://github.com/thelounge/thelounge-docker/commit/ca61267556e2f3663b290ed61f635c07ecd25b62))
+
 ## [4.4.1-rc.2](https://github.com/thelounge/thelounge-docker/compare/4.4.1-rc.1...4.4.1-rc.2) (2023-06-01)
 
 
