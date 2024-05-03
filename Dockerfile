@@ -10,24 +10,21 @@ LABEL org.opencontainers.image.source "https://github.com/thelounge/thelounge-do
 LABEL org.opencontainers.image.version "${THELOUNGE_VERSION}"
 LABEL org.opencontainers.image.licenses "MIT"
 
-ENV NODE_ENV production
-
+EXPOSE 9000
 ENV THELOUNGE_HOME "/var/opt/thelounge"
-VOLUME "${THELOUNGE_HOME}"
 
-# Expose HTTP.
-ENV PORT 9000
-EXPOSE ${PORT}
-
-ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["thelounge", "start"]
-
-COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-
-# Install thelounge.
+ENV NODE_ENV production
 RUN apk --update --no-cache --virtual build-deps add python3 build-base git && \
     ln -sf python3 /usr/bin/python && \
     yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
     yarn --non-interactive cache clean && \
     apk del --purge build-deps && \
     rm -rf /root/.cache /tmp /usr/bin/python
+
+RUN install -d -o node -g node "${THELOUNGE_HOME}"
+# order of the directives matters, keep VOLUME below the dir creation
+VOLUME "${THELOUNGE_HOME}"
+
+USER node:node
+ENTRYPOINT ["/usr/local/bin/thelounge"]
+CMD ["start"]
