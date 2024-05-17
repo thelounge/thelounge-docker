@@ -30,7 +30,7 @@ Images are available in the following registries:
 One can get started quickly by using the example [`docker-compose.yml`](https://github.com/thelounge/docker-lounge/blob/master/docker-compose.yml) file. [What is docker-compose?](https://docs.docker.com/compose/)
 
 ```sh
-$ docker-compose up --detach
+$ docker compose up --detach
 ```
 
 or starting a container manually:
