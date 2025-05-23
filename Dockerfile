@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:jod-alpine
 
 ARG THELOUNGE_VERSION=4.4.3
 
