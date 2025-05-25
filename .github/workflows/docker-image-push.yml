@@ -19,8 +19,7 @@ permissions:
 jobs:
   build:
     name: Build
-    # We want a newer version of qemu: https://bugs.launchpad.net/ubuntu/+source/qemu/+bug/1815100
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
     steps:
