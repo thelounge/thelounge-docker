@@ -30,7 +30,7 @@ Images are available in the following registries:
 One can get started quickly by using the example [`docker-compose.yml`](https://github.com/thelounge/docker-lounge/blob/master/docker-compose.yml) file. [What is docker-compose?](https://docs.docker.com/compose/)
 
 ```sh
-$ docker-compose up --detach
+$ docker compose up --detach
 ```
 
 or starting a container manually:
@@ -39,18 +39,18 @@ or starting a container manually:
 $ docker run --detach \
              --name thelounge \
              --publish 9000:9000 \
-             --volume ~/.thelounge:/var/opt/thelounge \
+             --volume thelounge:/var/opt/thelounge \
              --restart always \
              ghcr.io/thelounge/thelounge:latest
 ```
 
 ### Executing commands in the container
 
-Due to the way root permissions are dropped in the container, it's highly recommended to pass the `--user node` argument to any
-commands you execute in the container via Docker to ensure that file permissions retain the correct owner, like so:
+The container is setup to use an unprivileged user (node).  
+You can directly issue thelounge commands as follows:
 
 ```
-$ docker exec --user node -it [container_name] thelounge add MyUser
+$ docker exec -it [container_name] thelounge help
 ```
 
 ### Configuring identd
@@ -64,7 +64,7 @@ $ docker run --detach \
              --name thelounge \
              --publish 113:9001 \
              --publish 9000:9000 \
-             --volume ~/.thelounge:/var/opt/thelounge \
+             --volume thelounge:/var/opt/thelounge \
              --restart always \
              ghcr.io/thelounge/thelounge:latest
 ```
@@ -75,8 +75,7 @@ Refer to the [identd / oidentd docs](https://thelounge.chat/docs/guides/identd-a
 
 The Lounge reads and stores all of its configuration, logs and other data at `/var/opt/thelounge`.
 
-By default, The Lounge will run using the `node (1000:1000)` system user in the container, leading to mounted data directories
-on the host system being owned by said user. This is customizable by changing the container user (see [Container user (advanced usage)](#container-user-advanced-usage)).
+By default, The Lounge will run using the `node (1000:1000)` system user in the container, meaning volume contents must be owned by said user.
 
 _You will probably want to persist the data at this location by using [one of the means](https://docs.docker.com/storage/) to do so._
 
@@ -85,7 +84,7 @@ _You will probably want to persist the data at this location by using [one of th
 Users can be added as follows:
 
 ```sh
-$ docker exec --user node -it [container_name] thelounge add [username]
+$ docker exec -it [container_name] thelounge add [username]
 ```
 
 _Note: without [persisting data](#data-directory), added users will be lost when the container is removed._
@@ -99,7 +98,7 @@ change the host port in the port mapping. To make The Lounge available on e.g. p
 $ docker run --detach \
              --name thelounge \
              --publish 5000:9000 \ # Change host port to listen on port 5000
-             --volume ~/.thelounge:/var/opt/thelounge \
+             --volume thelounge:/var/opt/thelounge \
              --restart always \
              ghcr.io/thelounge/thelounge:latest
 ```
