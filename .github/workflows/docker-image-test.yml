@@ -5,29 +5,7 @@ on:
   pull_request:
 
 jobs:
-  diff:
-    name: Check if Dockerfile changed
-    runs-on: ubuntu-latest
-    outputs:
-      did_change: ${{ steps.diff.outputs.any_changed }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Check for changes
-        id: diff
-        run: |
-          if [[ $(git diff --name-only "origin/${GITHUB_BASE_REF}" -- Dockerfile | wc -l) -gt 0 ]]; then
-            echo "any_changed=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "any_changed=false" >> "$GITHUB_OUTPUT"
-          fi
-
   build:
-    needs: [diff]
-    if: ${{ needs.diff.outputs.did_change == 'true' }}
     name: Build
     runs-on: ubuntu-latest
     strategy:
