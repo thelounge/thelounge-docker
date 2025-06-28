@@ -1,5 +1,18 @@
 # Changelog
 
+## [4.5.0](https://github.com/thelounge/thelounge-docker/compare/4.4.3...4.5.0) (2025-06-28)
+
+
+### Features
+
+* use LTS version of node ([#199](https://github.com/thelounge/thelounge-docker/issues/199)) ([6da36d6](https://github.com/thelounge/thelounge-docker/commit/6da36d6444bdf6334ba0cd124529b6ca27c9ce7b))
+* use the USER directive ([#187](https://github.com/thelounge/thelounge-docker/issues/187)) ([d4b3d3b](https://github.com/thelounge/thelounge-docker/commit/d4b3d3b80ccdf8cbbef1abaf62e8c84bb7b7d616))
+
+
+### Bug Fixes
+
+* add python setuptools required for sqlite build ([#198](https://github.com/thelounge/thelounge-docker/issues/198)) ([421790c](https://github.com/thelounge/thelounge-docker/commit/421790c7f47dd49b697b4e57eaa12a27890b2662))
+
 ## [4.4.3](https://github.com/thelounge/thelounge-docker/compare/4.4.1...4.4.3) (2024-04-06)
 
 
