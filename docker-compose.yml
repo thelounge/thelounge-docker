@@ -6,4 +6,7 @@ services:
       - "9000:9000"
     restart: always
     volumes:
-      - thelounge:/var/opt/thelounge # uses a named volume on the host
+      - thelounge:/var/opt/thelounge # uses a named volume
+
+volumes:
+  thelounge:
