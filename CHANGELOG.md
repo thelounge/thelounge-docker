@@ -1,5 +1,13 @@
 # Changelog
 
+## [4.5.0](https://github.com/thelounge/thelounge-docker/compare/4.5.0-rc.2...4.5.0) (2026-05-20)
+
+
+### Miscellaneous Chores
+
+* **deps:** update dependency thelounge to v4.5.0 ([#208](https://github.com/thelounge/thelounge-docker/issues/208)) ([265ca6b](https://github.com/thelounge/thelounge-docker/commit/265ca6b3e30226f6d67bdc687aeff1544e97d09b))
+* **deps:** update dependency thelounge to v4.5.0-rc.3 ([#205](https://github.com/thelounge/thelounge-docker/issues/205)) ([b0ad5a0](https://github.com/thelounge/thelounge-docker/commit/b0ad5a0c7622c0e8064de3262787c08d9771aaf8))
+
 ## [4.5.0-rc.2](https://github.com/thelounge/thelounge-docker/compare/4.4.3...4.5.0-rc.2) (2026-05-02)
 
 
