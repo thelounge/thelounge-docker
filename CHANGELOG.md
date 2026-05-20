@@ -1,6 +1,6 @@
 # Changelog
 
-## [4.5.0-rc.2](https://github.com/thelounge/thelounge-docker/compare/4.4.3...4.5.0-rc.2) (2026-05-02)
+## [4.5.0](https://github.com/thelounge/thelounge-docker/compare/4.4.3...4.5.0) (2026-05-19)
 
 
 ### Features
@@ -16,7 +16,7 @@
 
 ### Miscellaneous Chores
 
-* **deps:** update dependency thelounge to v4.5.0-rc.2
+* **deps:** update dependency thelounge to v4.5.0
 
 ## [4.4.3](https://github.com/thelounge/thelounge-docker/compare/4.4.1...4.4.3) (2024-04-06)
 
