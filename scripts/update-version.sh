@@ -1,7 +1,7 @@
 #!/bin/bash
 
-command -v gsed &> /dev/null || {
-    >&2 echo "gsed command missing"
+command -v sed &> /dev/null || {
+    >&2 echo "sed command missing"
     exit 1
 }
 
@@ -15,9 +15,11 @@ fi
 replace_regex_in_file() {
     local REGEX="$1"
     shift 1
-    local FILES=$@
-    for file in $FILES; do
-        gsed -i -E "s/${REGEX}/\1${NEW_VERSION}/" "$file"
+    local FILES=("$@")
+    for file in "${FILES[@]}"; do
+        [[ -f "$file" ]] || continue
+        sed -i.bak -E "s/${REGEX}/\1${NEW_VERSION}/" "$file"
+        rm -f "${file}.bak"
     done
 }
 

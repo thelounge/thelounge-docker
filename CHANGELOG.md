@@ -1,5 +1,8 @@
 # Changelog
 
+## 4.5.2-rc.1 (2026-07-06)
+- Bump [`thelounge`][1] to [`4.5.2-rc.1`](https://github.com/thelounge/thelounge/releases/tag/v4.5.2-rc.1).
+
 ## [4.5.0](https://github.com/thelounge/thelounge-docker/compare/4.5.0-rc.2...4.5.0) (2026-05-20)
 
 
