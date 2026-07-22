@@ -1,6 +1,6 @@
 FROM node:22-alpine
 
-ARG THELOUNGE_VERSION=4.5.2
+ARG THELOUNGE_VERSION=4.6.0-pre.1
 
 LABEL org.opencontainers.image.title "Official The Lounge image"
 LABEL org.opencontainers.image.description "Official Docker image for The Lounge, a modern web IRC client designed for self-hosting."
