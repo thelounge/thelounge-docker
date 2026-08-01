@@ -14,7 +14,8 @@ EXPOSE 9000
 ENV THELOUNGE_HOME "/var/opt/thelounge"
 
 ENV NODE_ENV production
-RUN apk --update --no-cache --virtual build-deps add python3 py3-setuptools build-base git && \
+RUN apk --update --no-cache --virtual build-deps add python3 py3-setuptools build-base && \
+    apk add --no-cache git && \
     ln -sf python3 /usr/bin/python && \
     yarn --non-interactive --frozen-lockfile global add thelounge@${THELOUNGE_VERSION} && \
     yarn --non-interactive cache clean && \
