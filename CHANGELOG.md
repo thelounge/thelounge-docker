@@ -1,7 +1,7 @@
 # Changelog
 
-## 4.6.0-pre.1 (2026-07-22)
-- Bump [`thelounge`][1] to [`4.6.0-pre.1`](https://github.com/thelounge/thelounge/releases/tag/v4.6.0-pre.1).
+## 4.6.0-pre.2 (2026-10-17)
+- Bump [`thelounge`][1] to [`4.6.0-pre.2`](https://github.com/thelounge/thelounge/releases/tag/v4.6.0-pre.2).
 
 ## 4.5.2 (2026-07-11)
 - Bump [`thelounge`][1] to [`4.5.2`](https://github.com/thelounge/thelounge/releases/tag/v4.5.2).
